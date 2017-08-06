@@ -60,10 +60,10 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 		}).send({
 			to: admins,
 			from: {
-				name: 'Canniverse',
-				email: 'contact@canniverse.com',
+				name: 'Cannabiverse',
+				email: 'contact@cannabiverse.com',
 			},
-			subject: 'New Enquiry for Canniverse',
+			subject: 'New Enquiry for Cannabiverse',
 			enquiry: enquiry,
 			brand: brand,
 		}, callback);

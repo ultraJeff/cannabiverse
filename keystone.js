@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'Canniverse',
-	'brand': 'Canniverse',
+	'name': 'Cannabiverse',
+	'brand': 'Cannabiverse',
 
 	'sass': 'public',
 	'static': 'public',
