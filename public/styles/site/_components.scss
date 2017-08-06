@@ -1,0 +1,11 @@
+.btn {
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.btn-squash {
+	background-color: $squash;
+	color: $white;
+
+	@include static-link($white);
+}
