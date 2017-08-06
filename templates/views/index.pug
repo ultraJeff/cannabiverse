@@ -1,19 +1,53 @@
 extends ../layouts/default
 
 block content
-	.container-fluid: .jumbotron
-		//- img(src='/images/logo.svg', width='160')
-		//- h1 Cannabiverse
-		//- p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-		//- p It includes the latest versions of
-		//- 	| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-		//- 	| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		//- p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-		if user && user.canAccessKeystone
-			p
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p We have created a default Admin user for you with the email <strong>admin@cannabiverse.com</strong> and the password <strong>admin</strong>.
-			p
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
+	.container
+		.jumbotron
+			//- img(src='/images/logo.svg', width='160')
+			//- h1 Cannabiverse
+			//- p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
+			//- p It includes the latest versions of
+			//- 	| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
+			//- 	| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
+			//- p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
+			if user && user.canAccessKeystone
+				p
+					a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
+			else
+				p We have created a default Admin user for you with the email <strong>admin@cannabiverse.com</strong> and the password <strong>admin</strong>.
+				p
+					a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
+					|  to use the Admin UI.
+		.carousel#main-carousel.slide(data-ride="carousel")
+			ol.carousel-indicators
+				li.active(data-target="#main-carousel", data-slide-to="0")
+				li(data-target="#main-carousel", data-slide-to="1")
+				li(data-target="#main-carousel", data-slide-to="2")
+				li(data-target="#main-carousel", data-slide-to="3")
+				li(data-target="#main-carousel", data-slide-to="4")
+
+			.carousel-inner(role="listbox")
+				.item.active
+					img(src="http://placehold.it/1440x550")
+					.carousel-caption Cannabis is not just for pot heads.
+				.item
+					img(src="http://placehold.it/1440x550")
+					.carousel-caption Cannabis is not just for pot heads.
+				.item
+					img(src="http://placehold.it/1440x550")
+					.carousel-caption Cannabis is not just for pot heads.
+				.item
+					img(src="http://placehold.it/1440x550")
+					.carousel-caption Cannabis is not just for pot heads.
+				.item
+					img(src="http://placehold.it/1440x550")
+					.carousel-caption Cannabis is not just for pot heads.
+
+				//- controls
+				a.left.carousel-control(href="#main-carousel", role="button", data-slide="prev")
+					span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+					span.sr-only Previous
+				a.right.carousel-control(href="#main-carousel", role="button", data-slide="next")
+					span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+					span.sr-only Next
+

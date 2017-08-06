@@ -9,3 +9,8 @@
 
 	@include static-link($white);
 }
+
+.navbar-default {
+	background-color: $white;
+	border: 0;
+}
