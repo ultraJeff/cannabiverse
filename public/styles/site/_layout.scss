@@ -1,6 +1,4 @@
-#header {
-	margin-top: 30px;
-}
+@import "sections/header";
 
 #footer {
 	margin-top: 30px;
@@ -13,4 +11,9 @@
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+.navbar-default {
+	background-color: $white;
+	border: 0;
 }
