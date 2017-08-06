@@ -5853,10 +5853,27 @@ header {
     header h1 > a:hover, header h1 > a:active, header h1 > a:focus {
       color: inherit;
       text-decoration: none; }
-  header .navbar-header {
+  header .navbar-default .navbar-header {
     float: none; }
-    header .navbar-header h1 {
+    header .navbar-default .navbar-header h1 {
       text-align: center; }
+  header .navbar-default .navbar-collapse {
+    text-align: center;
+    width: 100%; }
+    header .navbar-default .navbar-collapse .navbar-nav {
+      display: inline-block;
+      float: none; }
+      header .navbar-default .navbar-collapse .navbar-nav > li[role=menuitem] > a {
+        color: #000000;
+        font-family: Comfortaa;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.1px;
+        text-align: center; }
+    header .navbar-default .navbar-collapse .navbar-abs {
+      bottom: 0;
+      position: absolute;
+      right: 30px; }
 
 #footer {
   margin-top: 30px;

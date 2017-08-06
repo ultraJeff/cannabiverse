@@ -44,10 +44,10 @@ html
 							span.icon-bar
 						h1: a(href='/') Cannabiverse
 					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
+						ul.nav.navbar-nav(role='menubar')
 							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						ul.nav.navbar-nav.navbar-right
+								li(class=(section == link.key ? 'active' : null), role='menuitem'): a(href=link.href)= link.label
+						ul.nav.navbar-nav.navbar-abs
 							if user
 								if user.canAccessKeystone
 									li: a(href='/keystone') Open Keystone
