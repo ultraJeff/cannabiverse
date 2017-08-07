@@ -12,8 +12,9 @@ html
 		title= title || 'Cannabiverse'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
-		//- Customise the stylesheet for your site by editing /public/styles/site.sass
+		//- Customise the stylesheet for your site by editing /public/styles/site.scss
 		link(href="/styles/site.css", rel="stylesheet")
+		link(href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css", rel="stylesheet")
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -42,7 +43,7 @@ html
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						h1: a(href='/') Cannabiverse
+						h1: a(href='#') Cannabiverse
 					.collapse.navbar-collapse
 						ul.nav.navbar-nav(role='menubar')
 							each link in navLinks
@@ -74,7 +75,25 @@ html
 
 
 		//- FOOTER
-		footer
+		footer: .container
+			h5: a(href='/') Cannabiverse
+			.middle-section
+				ul.social-icons
+					li.fa.fa-facebook-official
+					li.fa.fa-instagram
+					li.fa.fa-twitter
+				.legal 2017 All Rights Reserved.
+			.links
+				ul.company
+					li: h6 Company
+					li: a(href="#") About
+					li: a(href="#") Team
+					li: a(href="#") Jobs
+				ul.support
+					li: h6 Support
+					li: a(href="#") FAQS
+					li: a(href="#") Help Center
+					li: a(href="#") Contact Us
 
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
 			//- p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.

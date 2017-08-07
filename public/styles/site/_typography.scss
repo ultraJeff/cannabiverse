@@ -15,3 +15,22 @@ h1 {
   letter-spacing: -1.5px;
   text-transform: uppercase;
 }
+
+h5 {
+	color: $dark-sky-blue;
+	font-family: Comfortaa;
+	font-size: 26px;
+	font-weight: 300;
+	letter-spacing: -1.1px;
+  text-transform: uppercase;
+}
+
+h6 {
+	font-family: Comfortaa;
+	font-size: 16px;
+	letter-spacing: 1.8px;
+  color: $dark-sky-blue;
+  font-weight: bold;
+  line-height: 1.94;
+  text-transform: uppercase;
+}

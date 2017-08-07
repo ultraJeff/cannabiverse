@@ -1,5 +1,7 @@
 extends ../layouts/default
 
+include ../mixins/jumbotron-join
+
 block content
 	.container
 		.jumbotron
@@ -51,3 +53,4 @@ block content
 					span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
 					span.sr-only Next
 
+		+jumbotron-join

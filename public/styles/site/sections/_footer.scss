@@ -1,0 +1,57 @@
+footer {
+	border-top: 2px solid $dark-sky-blue;
+	margin-top: 60px;
+	padding-bottom: 40px;
+	padding-top: 25px;
+
+	.container {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	ul {
+		list-style-type: none;
+	}
+
+	.middle-section {
+		align-items: center;
+		display: inline-flex;
+		flex-flow: column nowrap;
+
+		.social-icons {
+			align-items: center;
+			color: $slate-grey;
+			display: inline-flex;
+			font-size: 40px;
+			justify-content: space-between;
+			letter-spacing: 2.4px;
+			padding: 0;
+			width: 100%;
+		}
+
+		.legal {
+			font-family: Roboto;
+		  color: $slate-grey-two;
+		  font-size: 14px;
+		  font-weight: 300;
+		  letter-spacing: 1.8px;
+		  text-align: left;
+		}
+	}
+
+	.links {
+		font-family: Comfortaa;
+	  display: inline-flex;
+	  font-size: 12px;
+	  letter-spacing: 1.8px;
+	  line-height: 2.58;
+	  text-align: left;
+
+	  a {
+	  	color: $greyish-brown;
+
+	  	@include static-link;
+	  }
+	}
+}
