@@ -5878,6 +5878,9 @@ h6 {
   background-color: #ffffff;
   border: 0; }
 
+.form-control {
+  border-radius: 5px; }
+
 header {
   border-bottom: 2px solid #4a90e2;
   margin-bottom: 35px;
@@ -5958,6 +5961,63 @@ footer {
       footer .links a:hover, footer .links a:active, footer .links a:focus {
         color: inherit;
         text-decoration: none; }
+
+.jumbotron.jumbotron-join {
+  border-radius: 14px;
+  background-color: #4a90e2;
+  border: solid 1px #979797;
+  padding: 40px 70px;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .jumbotron.jumbotron-join .logo {
+    flex: 0 0 50%;
+    font-family: Comfortaa;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center; }
+  .jumbotron.jumbotron-join .sign-up {
+    flex: 0 0 50%;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.83;
+    letter-spacing: 0.9px;
+    color: #ffffff; }
+    .jumbotron.jumbotron-join .sign-up .info {
+      text-transform: uppercase; }
+    .jumbotron.jumbotron-join .sign-up input {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      height: 48px;
+      margin-top: 15px;
+      margin-bottom: 20px; }
+    .jumbotron.jumbotron-join .sign-up ::-webkit-input-placeholder {
+      text-align: center; }
+    .jumbotron.jumbotron-join .sign-up :-moz-placeholder {
+      /* Firefox 18- */
+      text-align: center; }
+    .jumbotron.jumbotron-join .sign-up ::-moz-placeholder {
+      /* Firefox 19+ */
+      text-align: center; }
+    .jumbotron.jumbotron-join .sign-up :-ms-input-placeholder {
+      text-align: center; }
+    .jumbotron.jumbotron-join .sign-up .cta {
+      padding: 5px;
+      width: 100%;
+      height: 45px;
+      text-transform: uppercase;
+      vertical-align: middle; }
 
 .gallery-image img {
   display: block;

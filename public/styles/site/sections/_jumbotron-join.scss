@@ -1,0 +1,73 @@
+.jumbotron.jumbotron-join {
+	border-radius: 14px;
+  background-color: $dark-sky-blue;
+  border: solid 1px $warm-grey;
+  padding: 40px 70px;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+  	flex: 0 0 50%;
+  	font-family: Comfortaa;
+  	font-size: 36px;
+  	font-weight: 300;
+  	letter-spacing: -1.5px;
+  	color: $white;
+  	text-transform: uppercase;
+  	text-align: center;
+  }
+
+  .sign-up {
+  	flex: 0 0 50%;
+  	display: inline-flex;
+  	flex-flow: column nowrap;
+  	align-items: center;
+  	justify-content: center;
+  	text-align: center;
+  	font-family: Comfortaa;
+  	font-size: 18px;
+  	font-weight: bold;
+  	line-height: 1.83;
+  	letter-spacing: 0.9px;
+  	color: $white;
+
+  	.info {
+  		text-transform: uppercase;
+  	}
+
+  	input {
+  		width: 100%;
+  		text-align: center;
+  		padding: 15px;
+  		height: 48px;
+  		margin-top: 15px;
+  		margin-bottom: 20px;
+  	}
+
+  	::-webkit-input-placeholder {
+  	   text-align: center;
+  	}
+
+  	:-moz-placeholder { /* Firefox 18- */
+  	   text-align: center;
+  	}
+
+  	::-moz-placeholder {  /* Firefox 19+ */
+  	   text-align: center;
+  	}
+
+  	:-ms-input-placeholder {
+  	   text-align: center;
+  	}
+
+  	.cta {
+  		padding: 5px;
+  		width: 100%;
+  		height: 45px;
+  		text-transform: uppercase;
+  		vertical-align: middle;
+  	}
+  }
+}
