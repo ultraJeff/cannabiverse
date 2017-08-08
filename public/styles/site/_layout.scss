@@ -1,10 +1,14 @@
-@import "components";
-
 @import "components/header";
 
 @import "components/footer";
 
+@import "components/category-blade";
+
 @import "components/jumbotron-join";
+
+@import "components/news-wall";
+
+@import "bootstrap-component-overrides";
 
 .gallery-image img{
     display: block;

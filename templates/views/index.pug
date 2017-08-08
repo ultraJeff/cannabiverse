@@ -1,17 +1,11 @@
 extends ../layouts/default
 
 include ../mixins/jumbotron-join
+include ../mixins/news-wall
 
 block content
 	.container
 		.jumbotron
-			//- img(src='/images/logo.svg', width='160')
-			//- h1 Cannabiverse
-			//- p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-			//- p It includes the latest versions of
-			//- 	| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			//- 	| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-			//- p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
 			if user && user.canAccessKeystone
 				p
 					a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
@@ -52,5 +46,13 @@ block content
 				a.right.carousel-control(href="#main-carousel", role="button", data-slide="next")
 					span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
 					span.sr-only Next
+
+		section.category-blade(role="menubar")
+			- var colors = ["dark-sky-blue", "squash", "turquoise", "pinkish-red", "muted-purple"]
+			each link, index in navLinks
+				a(href="#" role="menuitem")
+					div.label(class="label-" + colors[index]) #{link.label} <span class="fa fa-angle-right"></span>
+
+		+news-wall
 
 		+jumbotron-join

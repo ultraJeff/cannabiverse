@@ -4,10 +4,15 @@ footer {
 	padding-bottom: 40px;
 	padding-top: 25px;
 
+	.logo {
+		@include static-link;
+	}
+
 	.container {
 		align-items: center;
 		display: flex;
-		justify-content: space-between;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
 	}
 
 	ul {
@@ -18,6 +23,7 @@ footer {
 		align-items: center;
 		display: inline-flex;
 		flex-flow: column nowrap;
+		margin: 10px;
 
 		.social-icons {
 			align-items: center;

@@ -1,0 +1,80 @@
+.news-wall {
+	margin-top: 100px;
+
+	h2 {
+		display: inline-block;
+	}
+
+	.story {
+		background-color: lightsteelblue;
+		height: 250px;
+		margin: 15px 0;
+		position: relative;
+
+		&.headline-story,
+		&.important-story {
+			height: 500px;
+
+			.story-summary {
+				height: 28%;
+			}
+
+			h4 {
+				font-size: 22px;
+			}
+		}
+
+		.story-summary {
+			background-color: $white;
+			bottom: 0;
+			height: 45%;
+			left: 0;
+			opacity: 0.8;
+			position: absolute;
+			right: 0;
+			transform: translateZ(0);
+
+			> .label {
+				left: 20px;
+				position: absolute;
+				top: -10px;
+			}
+
+			> .story-title {
+				margin-left: 20px;
+				margin-top: 30px;
+			}
+		}
+	}
+
+	.social-media-button {
+		float: right;
+		font-size: 14px;
+		margin-top: 20px;
+		padding: 10px 15px;
+
+		.fa {
+			font-size: 30px;
+			margin-right: 5px;
+			vertical-align: sub;
+		}
+	}
+
+	.add-300 {
+		background: url(http://placehold.it/300x250);
+		float: right;
+		height: 250px;
+		margin: 15px;
+		width: 300px;
+	}
+
+	.add-728 {
+		// Only show this if screen size is >= 768px
+		@media (min-width: $screen-sm-min) {
+	    background: url(http://placehold.it/728x90);
+	    height: 90px;
+	    margin: 60px auto 0;
+	    width: 728px;
+	  }
+	}
+}

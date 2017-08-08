@@ -1,0 +1,40 @@
+//$colors: $dark-sky-blue, $squash, $turquoise, $pinkish-red, $muted-purple;
+
+.category-blade {
+	align-items: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	margin-top: 70px;
+
+	a {
+		background-image: url(http://placehold.it/160x190);
+		height: 160px;
+		margin: 10px 5px;
+		//opacity: 0.5;
+		position: relative;
+		width: 190px;
+
+		@include static-link($white);
+
+		// Iterate over menu items to apply unique background color
+		// @for $i from 1 through length($colors) {
+		// 	$color: nth($colors, $i);
+
+		// 	&:nth-child(#{$i}) > div {
+		// 		background-color: #{$color};
+		// 	}
+		// }
+
+		> div {
+			bottom: 34px;
+			left: 20px;
+			min-width: 140px;
+			position: absolute;
+
+			> span {
+				font-size: 18px;
+			}
+		}
+	}
+}

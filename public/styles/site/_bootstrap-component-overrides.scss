@@ -1,0 +1,44 @@
+$labels: ("dark-sky-blue": $dark-sky-blue, "squash": $squash, "turquoise": $turquoise, "pinkish-red": $pinkish-red, "muted-purple": $muted-purple);
+
+.btn {
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.btn-squash {
+	background-color: $squash;
+	color: $white;
+
+	@include static-link($white);
+}
+
+.form-control {
+	border-radius: 5px;
+}
+
+// Iterate over menu items to apply unique background color
+@each $class, $color in $labels {
+	.label-#{$class} {
+		background-color: #{$color};
+		color: $white;
+		font-size: $font-size-base;
+		font-weight: bold;
+		padding: 6px 10px 4px 10px;
+		text-transform: uppercase;
+	}
+}
+
+.btn-facebook {
+	background-color: $facebook-blue;
+	border: 0;
+	color: $white;
+	font-family: "Roboto", Arial, sans-serif;
+	font-weight: 500;
+
+	@include static-link($white);
+}
+
+.navbar-default {
+	background-color: $white;
+	border: 0;
+}

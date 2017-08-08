@@ -5838,48 +5838,55 @@ button.close {
     See the License for the specific language governing permissions and
     limitations under the License.
 */
+body {
+  font-family: "Comfortaa", Arial, sans-serif; }
+  @media (min-width: 768px) {
+    body {
+      font-size: 16px; } }
+
 h1 {
-  font-family: Comfortaa;
   color: #4a90e2;
-  font-size: 36px;
+  font-family: Comfortaa;
+  font-size: 2.25em;
   font-weight: 300;
   letter-spacing: -1.5px;
   text-transform: uppercase; }
 
+h2 {
+  font-family: Roboto;
+  font-size: 2.25em;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase; }
+
+h3 {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 3.6px; }
+
+h4 {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2.2px; }
+
 h5 {
   color: #4a90e2;
   font-family: Comfortaa;
-  font-size: 26px;
+  font-size: 2em;
   font-weight: 300;
   letter-spacing: -1.1px;
   text-transform: uppercase; }
 
 h6 {
+  color: #4a90e2;
   font-family: Comfortaa;
   font-size: 16px;
-  letter-spacing: 1.8px;
-  color: #4a90e2;
   font-weight: bold;
+  letter-spacing: 1.8px;
   line-height: 1.94;
   text-transform: uppercase; }
-
-.btn {
-  border-radius: 5px;
-  font-size: 16px; }
-
-.btn-squash {
-  background-color: #ec6b30;
-  color: #ffffff; }
-  .btn-squash:hover, .btn-squash:active, .btn-squash:focus {
-    color: #ffffff;
-    text-decoration: none; }
-
-.navbar-default {
-  background-color: #ffffff;
-  border: 0; }
-
-.form-control {
-  border-radius: 5px; }
 
 header {
   border-bottom: 2px solid #4a90e2;
@@ -5923,16 +5930,21 @@ footer {
   margin-top: 60px;
   padding-bottom: 40px;
   padding-top: 25px; }
+  footer .logo:hover, footer .logo:active, footer .logo:focus {
+    color: inherit;
+    text-decoration: none; }
   footer .container {
     align-items: center;
     display: flex;
-    justify-content: space-between; }
+    flex-flow: row wrap;
+    justify-content: space-evenly; }
   footer ul {
     list-style-type: none; }
   footer .middle-section {
     align-items: center;
     display: inline-flex;
-    flex-flow: column nowrap; }
+    flex-flow: column nowrap;
+    margin: 10px; }
     footer .middle-section .social-icons {
       align-items: center;
       color: #6d6d72;
@@ -5962,46 +5974,71 @@ footer {
         color: inherit;
         text-decoration: none; }
 
+.category-blade {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 70px; }
+  .category-blade a {
+    background-image: url(http://placehold.it/160x190);
+    height: 160px;
+    margin: 10px 5px;
+    position: relative;
+    width: 190px; }
+    .category-blade a:hover, .category-blade a:active, .category-blade a:focus {
+      color: #ffffff;
+      text-decoration: none; }
+    .category-blade a > div {
+      bottom: 34px;
+      left: 20px;
+      min-width: 140px;
+      position: absolute; }
+      .category-blade a > div > span {
+        font-size: 18px; }
+
 .jumbotron.jumbotron-join {
   border-radius: 14px;
+  align-items: center;
   background-color: #4a90e2;
   border: solid 1px #979797;
-  padding: 40px 70px;
-  margin-top: 60px;
   display: flex;
-  align-items: center;
-  justify-content: space-between; }
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-top: 60px;
+  padding: 40px 70px; }
   .jumbotron.jumbotron-join .logo {
+    color: #ffffff;
     flex: 0 0 50%;
     font-family: Comfortaa;
-    font-size: 36px;
+    font-size: 2em;
     font-weight: 300;
     letter-spacing: -1.5px;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-align: center; }
+    margin-right: 15px;
+    text-align: center;
+    text-transform: uppercase; }
   .jumbotron.jumbotron-join .sign-up {
-    flex: 0 0 50%;
+    align-items: center;
+    color: #ffffff;
     display: inline-flex;
     flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    flex: 1;
     font-family: Comfortaa;
     font-size: 18px;
     font-weight: bold;
-    line-height: 1.83;
+    justify-content: center;
     letter-spacing: 0.9px;
-    color: #ffffff; }
+    line-height: 1.83;
+    text-align: center; }
     .jumbotron.jumbotron-join .sign-up .info {
       text-transform: uppercase; }
     .jumbotron.jumbotron-join .sign-up input {
-      width: 100%;
-      text-align: center;
-      padding: 15px;
       height: 48px;
+      margin-bottom: 20px;
       margin-top: 15px;
-      margin-bottom: 20px; }
+      padding: 15px;
+      text-align: center;
+      width: 100%; }
     .jumbotron.jumbotron-join .sign-up ::-webkit-input-placeholder {
       text-align: center; }
     .jumbotron.jumbotron-join .sign-up :-moz-placeholder {
@@ -6013,11 +6050,132 @@ footer {
     .jumbotron.jumbotron-join .sign-up :-ms-input-placeholder {
       text-align: center; }
     .jumbotron.jumbotron-join .sign-up .cta {
-      padding: 5px;
-      width: 100%;
       height: 45px;
+      padding: 5px;
       text-transform: uppercase;
-      vertical-align: middle; }
+      vertical-align: middle;
+      width: 100%; }
+
+.news-wall {
+  margin-top: 100px; }
+  .news-wall h2 {
+    display: inline-block; }
+  .news-wall .story {
+    background-color: lightsteelblue;
+    height: 250px;
+    margin: 15px 0;
+    position: relative; }
+    .news-wall .story.headline-story, .news-wall .story.important-story {
+      height: 500px; }
+      .news-wall .story.headline-story .story-summary, .news-wall .story.important-story .story-summary {
+        height: 28%; }
+      .news-wall .story.headline-story h4, .news-wall .story.important-story h4 {
+        font-size: 22px; }
+    .news-wall .story .story-summary {
+      background-color: #ffffff;
+      bottom: 0;
+      height: 45%;
+      left: 0;
+      opacity: 0.8;
+      position: absolute;
+      right: 0;
+      transform: translateZ(0); }
+      .news-wall .story .story-summary > .label {
+        left: 20px;
+        position: absolute;
+        top: -10px; }
+      .news-wall .story .story-summary > .story-title {
+        margin-left: 20px;
+        margin-top: 30px; }
+  .news-wall .social-media-button {
+    float: right;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px 15px; }
+    .news-wall .social-media-button .fa {
+      font-size: 30px;
+      margin-right: 5px;
+      vertical-align: sub; }
+  .news-wall .add-300 {
+    background: url(http://placehold.it/300x250);
+    float: right;
+    height: 250px;
+    margin: 15px;
+    width: 300px; }
+  @media (min-width: 768px) {
+    .news-wall .add-728 {
+      background: url(http://placehold.it/728x90);
+      height: 90px;
+      margin: 60px auto 0;
+      width: 728px; } }
+
+.btn {
+  border-radius: 5px;
+  font-size: 16px; }
+
+.btn-squash {
+  background-color: #ec6b30;
+  color: #ffffff; }
+  .btn-squash:hover, .btn-squash:active, .btn-squash:focus {
+    color: #ffffff;
+    text-decoration: none; }
+
+.form-control {
+  border-radius: 5px; }
+
+.label-dark-sky-blue {
+  background-color: #4a90e2;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 10px 4px 10px;
+  text-transform: uppercase; }
+
+.label-squash {
+  background-color: #ec6b30;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 10px 4px 10px;
+  text-transform: uppercase; }
+
+.label-turquoise {
+  background-color: #0cbca4;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 10px 4px 10px;
+  text-transform: uppercase; }
+
+.label-pinkish-red {
+  background-color: #ef233c;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 10px 4px 10px;
+  text-transform: uppercase; }
+
+.label-muted-purple {
+  background-color: #6e538b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 6px 10px 4px 10px;
+  text-transform: uppercase; }
+
+.btn-facebook {
+  background-color: #386ca8;
+  border: 0;
+  color: #ffffff;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500; }
+  .btn-facebook:hover, .btn-facebook:active, .btn-facebook:focus {
+    color: #ffffff;
+    text-decoration: none; }
+
+.navbar-default {
+  background-color: #ffffff;
+  border: 0; }
 
 .gallery-image img {
   display: block;
