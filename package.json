@@ -2,6 +2,10 @@
   "name": "cannabiverse",
   "version": "0.1.0",
   "private": true,
+  "author": "Cannabiverse",
+  "engines": {
+    "node": "7.3.0"
+  },
   "dependencies": {
     "async": "2.1.4",
     "dotenv": "4.0.0",
