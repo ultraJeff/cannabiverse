@@ -48,7 +48,7 @@ html
 						ul.nav.navbar-nav(role='menubar')
 							each link in navLinks
 								li(class=(section == link.key ? 'active' : null), role='menuitem'): a(href=link.href)= link.label
-						a.btn.btn-squash.sign-up(href='/keystone/signin') Sign Up Now!
+						a.btn.btn-squash.sign-up.visible-lg(href='/keystone/signin') Sign Up Now!
 						//- ul.nav.navbar-nav.navbar-abs
 						//- 	if user
 						//- 		if user.canAccessKeystone

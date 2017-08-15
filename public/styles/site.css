@@ -5997,7 +5997,7 @@ footer {
       .category-blade a > div > span {
         font-size: 18px; }
 
-.jumbotron.jumbotron-join {
+.jumbotron.join-jumbotron {
   border-radius: 14px;
   align-items: center;
   background-color: #4a90e2;
@@ -6007,7 +6007,7 @@ footer {
   justify-content: space-evenly;
   margin-top: 60px;
   padding: 40px 70px; }
-  .jumbotron.jumbotron-join .logo {
+  .jumbotron.join-jumbotron .logo {
     color: #ffffff;
     flex: 0 0 50%;
     font-family: Comfortaa;
@@ -6017,7 +6017,7 @@ footer {
     margin-right: 15px;
     text-align: center;
     text-transform: uppercase; }
-  .jumbotron.jumbotron-join .sign-up {
+  .jumbotron.join-jumbotron .sign-up {
     align-items: center;
     color: #ffffff;
     display: inline-flex;
@@ -6030,26 +6030,80 @@ footer {
     letter-spacing: 0.9px;
     line-height: 1.83;
     text-align: center; }
-    .jumbotron.jumbotron-join .sign-up .info {
+    .jumbotron.join-jumbotron .sign-up .info {
       text-transform: uppercase; }
-    .jumbotron.jumbotron-join .sign-up input {
+    .jumbotron.join-jumbotron .sign-up input {
       height: 48px;
       margin-bottom: 20px;
       margin-top: 15px;
       padding: 15px;
       text-align: center;
       width: 100%; }
-    .jumbotron.jumbotron-join .sign-up ::-webkit-input-placeholder {
+    .jumbotron.join-jumbotron .sign-up ::-webkit-input-placeholder {
       text-align: center; }
-    .jumbotron.jumbotron-join .sign-up :-moz-placeholder {
+    .jumbotron.join-jumbotron .sign-up :-moz-placeholder {
       /* Firefox 18- */
       text-align: center; }
-    .jumbotron.jumbotron-join .sign-up ::-moz-placeholder {
+    .jumbotron.join-jumbotron .sign-up ::-moz-placeholder {
       /* Firefox 19+ */
       text-align: center; }
-    .jumbotron.jumbotron-join .sign-up :-ms-input-placeholder {
+    .jumbotron.join-jumbotron .sign-up :-ms-input-placeholder {
       text-align: center; }
-    .jumbotron.jumbotron-join .sign-up .cta {
+    .jumbotron.join-jumbotron .sign-up .cta {
+      height: 45px;
+      padding: 5px;
+      text-transform: uppercase;
+      vertical-align: middle;
+      width: 100%; }
+
+.join-aside {
+  border-radius: 14px;
+  background-color: #4a90e2;
+  border: solid 1px #979797;
+  display: inline-block;
+  margin-top: 60px;
+  padding: 40px; }
+  .join-aside .logo {
+    color: #ffffff;
+    font-family: Comfortaa;
+    font-size: 2em;
+    font-weight: 300;
+    letter-spacing: -1.5px;
+    margin-right: 15px;
+    text-align: center;
+    text-transform: uppercase; }
+  .join-aside .sign-up {
+    align-items: center;
+    color: #ffffff;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: 0.9px;
+    line-height: 1.83;
+    text-align: center; }
+    .join-aside .sign-up .info {
+      text-transform: uppercase; }
+    .join-aside .sign-up input {
+      height: 48px;
+      margin-bottom: 20px;
+      margin-top: 15px;
+      padding: 15px;
+      text-align: center;
+      width: 100%; }
+    .join-aside .sign-up ::-webkit-input-placeholder {
+      text-align: center; }
+    .join-aside .sign-up :-moz-placeholder {
+      /* Firefox 18- */
+      text-align: center; }
+    .join-aside .sign-up ::-moz-placeholder {
+      /* Firefox 19+ */
+      text-align: center; }
+    .join-aside .sign-up :-ms-input-placeholder {
+      text-align: center; }
+    .join-aside .sign-up .cta {
       height: 45px;
       padding: 5px;
       text-transform: uppercase;
@@ -6096,18 +6150,13 @@ footer {
       font-size: 30px;
       margin-right: 5px;
       vertical-align: sub; }
-  .news-wall .add-300 {
-    background: url(http://placehold.it/300x250);
-    float: right;
-    height: 250px;
-    margin: 15px;
-    width: 300px; }
-  @media (min-width: 768px) {
-    .news-wall .add-728 {
-      background: url(http://placehold.it/728x90);
-      height: 90px;
-      margin: 60px auto 0;
-      width: 728px; } }
+
+.blog h2 {
+  display: inline-block;
+  font-family: 'Comfortaa', 'Arial', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  padding: 15px 30px 10px 30px; }
 
 .btn {
   border-radius: 5px;
@@ -6181,3 +6230,17 @@ footer {
   display: block;
   max-width: 100%;
   height: auto; }
+
+.add-300 {
+  background: url(http://placehold.it/300x250);
+  float: right;
+  height: 250px;
+  margin: 15px 0;
+  width: 300px; }
+
+@media (min-width: 768px) {
+  .add-728 {
+    background: url(http://placehold.it/728x90);
+    height: 90px;
+    margin: 60px auto 0;
+    width: 728px; } }

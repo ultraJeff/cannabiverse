@@ -4,9 +4,13 @@
 
 @import "components/category-blade";
 
-@import "components/jumbotron-join";
+@import "components/join-jumbotron";
+
+@import "components/join-aside";
 
 @import "components/news-wall";
+
+@import "blog-page";
 
 @import "bootstrap-component-overrides";
 
@@ -14,4 +18,22 @@
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+.add-300 {
+	background: url(http://placehold.it/300x250);
+	float: right;
+	height: 250px;
+	margin: 15px 0;
+	width: 300px;
+}
+
+.add-728 {
+	// Only show this if screen size is >= 768px
+	@media (min-width: $screen-sm-min) {
+    background: url(http://placehold.it/728x90);
+    height: 90px;
+    margin: 60px auto 0;
+    width: 728px;
+  }
 }
