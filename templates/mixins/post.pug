@@ -7,7 +7,7 @@ mixin post(post, index)
 						img(src="https://placehold.it/720x500").img-responsive
 						//- img(src=post._.image.fit(160,160)).img
 				.story-summary
-					if data.category.name
+					if data.category
 						.label(class="label-" + data.category.name.toLowerCase())= data.category.name
 					h3.story-title= post.title
 					.story-brief!= post.content.brief
@@ -18,7 +18,7 @@ mixin post(post, index)
 						img(src="https://placehold.it/345x250").img-responsive
 						//- img(src=post._.image.fit(160,160)).img
 				.story-summary
-					if data.category.name
+					if data.category
 						.label(class="label-" + data.category.name.toLowerCase())= data.category.name
 					h4.story-title= post.title
 					.story-brief!= post.content.brief
@@ -29,7 +29,7 @@ mixin post(post, index)
 						img(src="https://placehold.it/345x500").img-responsive
 						//- img(src=post._.image.fit(160,160)).img
 				.story-summary
-					if data.category.name
+					if data.category
 						.label(class="label-" + data.category.name.toLowerCase())= data.category.name
 					h4.story-title= post.title
 					.story-brief!= post.content.brief
