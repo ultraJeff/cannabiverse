@@ -8,7 +8,7 @@
 
 @import "components/join-aside";
 
-@import "components/news-wall";
+@import "components/post-wall";
 
 @import "blog-page";
 
@@ -20,20 +20,26 @@
     height: auto;
 }
 
-.add-300 {
+.add-300-short {
 	background: url(http://placehold.it/300x250);
-	float: right;
 	height: 250px;
-	margin: 15px 0;
+	margin: 15px auto 0;
+	width: 300px;
+}
+
+.add-300-tall {
+	background: url(http://placehold.it/300x600);
+	height: 600px;
+	margin: 15px auto 0;
 	width: 300px;
 }
 
 .add-728 {
 	// Only show this if screen size is >= 768px
-	@media (min-width: $screen-sm-min) {
-    background: url(http://placehold.it/728x90);
-    height: 90px;
-    margin: 60px auto 0;
-    width: 728px;
-  }
+	//@media (min-width: $screen-lg-min) {
+	    background: url(http://placehold.it/728x90);
+	    height: 90px;
+	    margin: 60px auto 0;
+	    width: 728px;
+	//}
 }

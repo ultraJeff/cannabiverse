@@ -1,7 +1,7 @@
 extends ../layouts/default
 
 include ../mixins/join-jumbotron
-include ../mixins/news-wall
+include ../mixins/post-wall
 
 block content
 	.container
@@ -48,11 +48,11 @@ block content
 					span.sr-only Next
 
 		section.category-blade(role="menubar")
-			- var colors = ["dark-sky-blue", "squash", "turquoise", "pinkish-red", "muted-purple"]
+			//- var colors = ["dark-sky-blue", "squash", "turquoise", "pinkish-red", "muted-purple"]
 			each link, index in navLinks
 				a(href="#" role="menuitem")
-					div.label(class="label-" + colors[index]) #{link.label} <span class="fa fa-angle-right"></span>
+					div.label(class="label-" + link.label.toLowerCase()) #{link.label} <span class="fa fa-angle-right"></span>
 
-		+news-wall
+		+post-wall
 
 		+join-jumbotron

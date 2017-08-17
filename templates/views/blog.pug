@@ -2,29 +2,7 @@ extends ../layouts/default
 
 include ../mixins/join-aside
 include ../mixins/join-jumbotron
-include ../mixins/news-wall
-
-mixin post(post)
-	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/blog/post/' + post.slug)= post.title
-		p.lead.text-muted Posted
-			if post.publishedDate
-				| on #{post._.publishedDate.format('MMMM Do, YYYY')}
-			if post.categories && post.categories.length
-				| in
-				each cat, i in post.categories
-					a(href='/blog/' + cat.key)= cat.name
-					if i < post.categories.length - 1
-						| ,
-					else
-						|
-			if post.author
-				| by #{post.author.name.first}
-		if post.image.exists
-			img(src=post._.image.fit(160,160)).img.pull-right
-		p!= post.content.brief
-		if post.content.extended
-			p.read-more: a(href='/blog/post/' + post.slug) Read more...
+include ../mixins/post
 
 //- block intro
 //- 	.container
@@ -34,26 +12,49 @@ block content
 	.blog
 		.container
 			.row
-				.col-sm-8
-					aside.add-728
-					h2.label.label-dark-sky-blue= data.category ? data.category.name : 'Blog'
+				.col-md-8
+					aside.add-728.visible-lg.visible-sm
+					if data.category
+						h2.label(class="label-" + data.category.name.toLowerCase())= data.category.name
+					else
+						h2.label= 'Blog'
+
 					if filters.category && !data.category
 						h3.text-muted Invalid Category.
 					else
 						if data.posts.results.length
-							if data.posts.totalPages > 1
-								h4.text-weight-normal Showing
-									strong #{data.posts.first}
-									|  to
-									strong #{data.posts.last}
-									|  of
-									strong #{data.posts.total}
-									|  posts.
-							else
-								h4.text-weight-normal Showing #{utils.plural(data.posts.results.length, '* post')}.
-							.blog
-								each post in data.posts.results
-									+post(post)
+							//- if data.posts.totalPages > 1
+							//- 	h4.text-weight-normal Showing
+							//- 		strong #{data.posts.first}
+							//- 		|  to
+							//- 		strong #{data.posts.last}
+							//- 		|  of
+							//- 		strong #{data.posts.total}
+							//- 		|  posts.
+							//- else
+							//- 	h4.text-weight-normal Showing #{utils.plural(data.posts.results.length, '* post')}.
+
+							.post-wall
+								.container-fluid
+									.row
+										.col-md-12
+											+post(data.posts.results[0], 0)
+									if data.posts.results.length > 1
+										.row
+											.col-md-6
+												+post(data.posts.results[1], 1)
+												if data.posts.results.length > 2
+													+post(data.posts.results[2], 2)
+
+											if data.posts.results.length > 3
+												.col-md-6
+													+post(data.posts.results[3], 3)
+													if data.posts.results.length > 4
+														+post(data.posts.results[4], 4)
+									//- each post, index in data.posts.results
+									//- 	+post(post, index)
+									.row
+										aside.add-728.visible-lg.visible-sm
 
 							if data.posts.totalPages > 1
 								ul.pagination
@@ -74,13 +75,16 @@ block content
 							else
 								h3.text-muted There are no posts yet.
 
-				if data.categories.length
-					.col-sm-4
-						+join-aside
-						h2 Categories
-						.list-group(style='margin-top: 70px;')
-							a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
-							each cat in data.categories
-								a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+				.col-md-4
+					+join-aside
+					if data.categories.length
+						.hidden-sm.hidden-xs
+							h2 Categories
+							.list-group
+								a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
+								each cat in data.categories
+									a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+					aside.add-300-short
+					aside.add-300-tall
 
 			+join-jumbotron

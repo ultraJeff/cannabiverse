@@ -5937,7 +5937,7 @@ footer {
     align-items: center;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly; }
+    justify-content: space-around; }
   footer ul {
     list-style-type: none; }
   footer .middle-section {
@@ -5978,7 +5978,7 @@ footer {
   align-items: center;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-top: 70px; }
   .category-blade a {
     background-image: url(http://placehold.it/160x190);
@@ -6004,7 +6004,7 @@ footer {
   border: solid 1px #979797;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-top: 60px;
   padding: 40px 70px; }
   .jumbotron.join-jumbotron .logo {
@@ -6062,7 +6062,9 @@ footer {
   border: solid 1px #979797;
   display: inline-block;
   margin-top: 60px;
-  padding: 40px; }
+  padding: 40px;
+  text-align: center;
+  width: 100%; }
   .join-aside .logo {
     color: #ffffff;
     font-family: Comfortaa;
@@ -6110,22 +6112,25 @@ footer {
       vertical-align: middle;
       width: 100%; }
 
-.news-wall {
-  margin-top: 100px; }
-  .news-wall h2 {
+.post-wall {
+  margin-top: 60px; }
+  .post-wall h2 {
     display: inline-block; }
-  .news-wall .story {
+  .post-wall a {
+    color: black; }
+  .post-wall .story {
     background-color: lightsteelblue;
+    display: block;
     height: 250px;
     margin: 15px 0;
     position: relative; }
-    .news-wall .story.headline-story, .news-wall .story.important-story {
+    .post-wall .story.headline-story, .post-wall .story.important-story {
       height: 500px; }
-      .news-wall .story.headline-story .story-summary, .news-wall .story.important-story .story-summary {
+      .post-wall .story.headline-story .story-summary, .post-wall .story.important-story .story-summary {
         height: 28%; }
-      .news-wall .story.headline-story h4, .news-wall .story.important-story h4 {
+      .post-wall .story.headline-story h4, .post-wall .story.important-story h4 {
         font-size: 22px; }
-    .news-wall .story .story-summary {
+    .post-wall .story .story-summary {
       background-color: #ffffff;
       bottom: 0;
       height: 45%;
@@ -6134,19 +6139,23 @@ footer {
       position: absolute;
       right: 0;
       transform: translateZ(0); }
-      .news-wall .story .story-summary > .label {
+      .post-wall .story .story-summary > .label {
         left: 20px;
         position: absolute;
         top: -10px; }
-      .news-wall .story .story-summary > .story-title {
+      .post-wall .story .story-summary > .story-title {
         margin-left: 20px;
         margin-top: 30px; }
-  .news-wall .social-media-button {
+      .post-wall .story .story-summary > .story-brief {
+        margin-left: 20px;
+        margin-top: 10px; }
+  .post-wall .social-media-button {
+    color: #ffffff;
     float: right;
     font-size: 14px;
     margin-top: 20px;
-    padding: 10px 15px; }
-    .news-wall .social-media-button .fa {
+    padding: 7px 15px 10px 15px; }
+    .post-wall .social-media-button .fa {
       font-size: 30px;
       margin-right: 5px;
       vertical-align: sub; }
@@ -6172,7 +6181,7 @@ footer {
 .form-control {
   border-radius: 5px; }
 
-.label-dark-sky-blue {
+.label-research {
   background-color: #4a90e2;
   color: #ffffff;
   font-size: 16px;
@@ -6180,7 +6189,7 @@ footer {
   padding: 6px 10px 4px 10px;
   text-transform: uppercase; }
 
-.label-squash {
+.label-innovation {
   background-color: #ec6b30;
   color: #ffffff;
   font-size: 16px;
@@ -6188,7 +6197,7 @@ footer {
   padding: 6px 10px 4px 10px;
   text-transform: uppercase; }
 
-.label-turquoise {
+.label-news {
   background-color: #0cbca4;
   color: #ffffff;
   font-size: 16px;
@@ -6196,7 +6205,7 @@ footer {
   padding: 6px 10px 4px 10px;
   text-transform: uppercase; }
 
-.label-pinkish-red {
+.label-culture {
   background-color: #ef233c;
   color: #ffffff;
   font-size: 16px;
@@ -6204,7 +6213,7 @@ footer {
   padding: 6px 10px 4px 10px;
   text-transform: uppercase; }
 
-.label-muted-purple {
+.label-education {
   background-color: #6e538b;
   color: #ffffff;
   font-size: 16px;
@@ -6231,16 +6240,20 @@ footer {
   max-width: 100%;
   height: auto; }
 
-.add-300 {
+.add-300-short {
   background: url(http://placehold.it/300x250);
-  float: right;
   height: 250px;
-  margin: 15px 0;
+  margin: 15px auto 0;
   width: 300px; }
 
-@media (min-width: 768px) {
-  .add-728 {
-    background: url(http://placehold.it/728x90);
-    height: 90px;
-    margin: 60px auto 0;
-    width: 728px; } }
+.add-300-tall {
+  background: url(http://placehold.it/300x600);
+  height: 600px;
+  margin: 15px auto 0;
+  width: 300px; }
+
+.add-728 {
+  background: url(http://placehold.it/728x90);
+  height: 90px;
+  margin: 60px auto 0;
+  width: 728px; }
