@@ -1,4 +1,5 @@
 include ../mixins/flash-messages
+include ../mixins/logo
 
 doctype html
 html
@@ -43,7 +44,7 @@ html
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						h1: a(href='/') Cannabiverse
+						h1: a(href='/'): +logo(true, 70)
 					.collapse.navbar-collapse
 						ul.nav.navbar-nav(role='menubar')
 							each link in navLinks
@@ -87,12 +88,9 @@ html
 				ul.company
 					li: h6 Company
 					li: a(href="#") About
-					li: a(href="#") Team
-					li: a(href="#") Jobs
 				ul.support
 					li: h6 Support
-					li: a(href="#") FAQS
-					li: a(href="#") Help Center
+					li: a(href="https://cannabiverse.freshdesk.com/support/home") FAQS
 					li: a(href="#") Contact Us
 
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
