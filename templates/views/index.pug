@@ -4,17 +4,8 @@ include ../mixins/join-jumbotron
 include ../mixins/post-wall
 
 block content
-	.container
-		//- .jumbotron
-		//- 	if user && user.canAccessKeystone
-		//- 		p
-		//- 			a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		//- 	else
-		//- 		p We have created a default Admin user for you with the email <strong>admin@cannabiverse.com</strong> and the password <strong>admin</strong>.
-		//- 		p
-		//- 			a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-		//- 			|  to use the Admin UI.
-		.carousel#main-carousel.slide(data-ride="carousel")
+	.container.mt-5
+		#main-carousel.carousel.slide(data-ride="carousel")
 			ol.carousel-indicators
 				li.active(data-target="#main-carousel", data-slide-to="0")
 				li(data-target="#main-carousel", data-slide-to="1")
@@ -22,36 +13,36 @@ block content
 				li(data-target="#main-carousel", data-slide-to="3")
 				li(data-target="#main-carousel", data-slide-to="4")
 
-			.carousel-inner(role="listbox")
-				.item.active
-					img(src="http://placehold.it/1440x550")
-					.carousel-caption Cannabis is not just for pot heads.
-				.item
-					img(src="http://placehold.it/1440x550")
-					.carousel-caption Cannabis is not just for pot heads.
-				.item
-					img(src="http://placehold.it/1440x550")
-					.carousel-caption Cannabis is not just for pot heads.
-				.item
-					img(src="http://placehold.it/1440x550")
-					.carousel-caption Cannabis is not just for pot heads.
-				.item
-					img(src="http://placehold.it/1440x550")
-					.carousel-caption Cannabis is not just for pot heads.
+			.carousel-inner
+				.carousel-item.active
+					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
+					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
+				.carousel-item
+					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
+					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
+				.carousel-item
+					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
+					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
+				.carousel-item
+					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
+					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
+				.carousel-item
+					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
+					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
 
-				//- controls
-				a.left.carousel-control(href="#main-carousel", role="button", data-slide="prev")
-					span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
-					span.sr-only Previous
-				a.right.carousel-control(href="#main-carousel", role="button", data-slide="next")
-					span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
-					span.sr-only Next
+			//- controls
+			a.left.carousel-control-prev(href="#main-carousel", role="button", data-slide="prev")
+				span.carousel-control-prev-icon(aria-hidden="true")
+				span.sr-only Previous
+			a.right.carousel-control-next(href="#main-carousel", role="button", data-slide="next")
+				span.carousel-control-next-icon(aria-hidden="true")
+				span.sr-only Next
 
 		section.category-blade(role="menubar")
 			//- var colors = ["dark-sky-blue", "squash", "turquoise", "pinkish-red", "muted-purple"]
 			each link, index in navLinks
 				a(href="#" role="menuitem")
-					div.label(class="label-" + link.label.toLowerCase()) #{link.label} <span class="fa fa-angle-right"></span>
+					div.badge(class="badge-" + link.label.toLowerCase()) #{link.label} <span class="fa fa-angle-right"></span>
 
 		+post-wall
 
