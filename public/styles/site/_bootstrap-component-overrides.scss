@@ -18,7 +18,7 @@ $labels: ("research": $dark-sky-blue, "innovation": $squash, "news": $turquoise,
 
 // Iterate over menu items to apply unique background color
 @each $class, $color in $labels {
-	.label-#{$class} {
+	.badge-#{$class} {
 		background-color: #{$color};
 		color: $white;
 		font-size: $font-size-base;

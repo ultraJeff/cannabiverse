@@ -1,7 +1,9 @@
+include logo
+
 mixin join-aside
 	.join-aside
-		.logo
-		.sign-up
+		.logo.white: +logo(false, 50)
+		.sign-up.mt-3
 			.info Join our community. Be the first to know.
 			.cta-text Sign up for our newsletter:
 			input.form-control(type="email", placeholder="Enter your email address")
