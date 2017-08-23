@@ -14,10 +14,25 @@
 
 @import "bootstrap-component-overrides";
 
-.gallery-image img{
-    display: block;
-    max-width: 100%;
-    height: auto;
+.logo {
+	display: inline-flex;
+	align-items: center;
+
+	> svg {
+		.a {
+			fill:none;
+		}
+		.b {
+			stroke-width:2;
+			stroke: $dark-sky-blue;
+		}
+	}
+
+	&.white > svg .b {
+		stroke: $white;
+	}
+
+	> span { margin: 10px 0 0 20px; }
 }
 
 .add-300-short {

@@ -5,12 +5,8 @@ header {
 
 	h1 > a {
 		color: inherit;
-		display: inline-flex;
-		align-items: center;
 
 		@include static-link;
-
-		> span { margin: 10px 0 0 20px; }
 	}
 
 	.container {

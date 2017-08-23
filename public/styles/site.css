@@ -5893,14 +5893,10 @@ header {
   margin-bottom: 35px;
   margin-top: 40px; }
   header h1 > a {
-    color: inherit;
-    display: inline-flex;
-    align-items: center; }
+    color: inherit; }
     header h1 > a:hover, header h1 > a:active, header h1 > a:focus {
       color: inherit;
       text-decoration: none; }
-    header h1 > a > span {
-      margin: 10px 0 0 20px; }
   header .container {
     position: relative; }
   header .sign-up {
@@ -5986,6 +5982,8 @@ footer {
   margin-top: 70px; }
   .category-blade a {
     background-image: url(http://placehold.it/160x190);
+    background-position: center;
+    background-size: cover;
     height: 160px;
     margin: 10px 5px;
     position: relative;
@@ -6000,6 +5998,16 @@ footer {
       position: absolute; }
       .category-blade a > div > span {
         font-size: 18px; }
+    .category-blade a:nth-child(1) {
+      background-image: url(../../images/bio-hacking-category-image.png); }
+    .category-blade a:nth-child(2) {
+      background-image: url(../../images/power-category-image.png); }
+    .category-blade a:nth-child(3) {
+      background-image: url(../../images/money-category-image.png); }
+    .category-blade a:nth-child(4) {
+      background-image: url(../../images/culture-category-image.png); }
+    .category-blade a:nth-child(5) {
+      background-image: url(../../images/spirituality-category-image.png); }
 
 .jumbotron.join-jumbotron {
   border-radius: 14px;
@@ -6239,10 +6247,18 @@ footer {
   background-color: #ffffff;
   border: 0; }
 
-.gallery-image img {
-  display: block;
-  max-width: 100%;
-  height: auto; }
+.logo {
+  display: inline-flex;
+  align-items: center; }
+  .logo > svg .a {
+    fill: none; }
+  .logo > svg .b {
+    stroke-width: 2;
+    stroke: #4a90e2; }
+  .logo.white > svg .b {
+    stroke: #ffffff; }
+  .logo > span {
+    margin: 10px 0 0 20px; }
 
 .add-300-short {
   background: url(http://placehold.it/300x250);
