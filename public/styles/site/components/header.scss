@@ -3,10 +3,14 @@ header {
 	margin-bottom: 35px;
 	margin-top: 40px;
 
-	h1 > a {
-		color: inherit;
+	h1 {
+		text-align: center;
 
-		@include static-link;
+		> a {
+			color: inherit;
+
+			@include static-link;
+		}
 	}
 
 	.container {
@@ -19,35 +23,23 @@ header {
 		right: 30px;
 	}
 
-	.navbar-default {
-		.navbar-header {
-			float: none;
+	.navbar-collapse {
+		text-transform: uppercase;
 
-			h1 {
-				text-align: center;
-			}
-		}
+	// 		.navbar-nav {
+	// 			display: inline-block;
+	// 			float: none;
 
-		.navbar-collapse {
-			text-align: center;
-			text-transform: uppercase;
-			width: 100%;
+	// 			> li[role=menuitem] > a {
+	// 			  color: $black;
+	// 			  font-family: Comfortaa;
+	// 			  font-size: $font-size-base;
+	// 			  font-weight: bold;
+	// 			  letter-spacing: 1.1px;
+	// 			  text-align: center;
 
-			.navbar-nav {
-				display: inline-block;
-				float: none;
-
-				> li[role=menuitem] > a {
-				  color: $black;
-				  font-family: Comfortaa;
-				  font-size: $font-size-base;
-				  font-weight: bold;
-				  letter-spacing: 1.1px;
-				  text-align: center;
-
-					@include static-link;
-				}
-			}
-		}
+	// 				@include static-link;
+	// 			}
+	// 		}
 	}
 }

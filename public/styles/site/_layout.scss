@@ -22,9 +22,14 @@
 		.a {
 			fill:none;
 		}
+
 		.b {
 			stroke-width:2;
 			stroke: $dark-sky-blue;
+		}
+
+		@include media-breakpoint-down(xs) {
+			width: 50px;
 		}
 	}
 
@@ -32,7 +37,13 @@
 		stroke: $white;
 	}
 
-	> span { margin: 10px 0 0 20px; }
+	> span {
+		margin: 10px 0 0 20px;
+
+		@include media-breakpoint-down(xs) {
+			margin-left: 10px;
+		}
+	}
 }
 
 .add-300-short {
@@ -50,11 +61,8 @@
 }
 
 .add-728 {
-	// Only show this if screen size is >= 768px
-	//@media (min-width: $screen-lg-min) {
-	    background: url(http://placehold.it/728x90);
-	    height: 90px;
-	    margin: 60px auto 0;
-	    width: 728px;
-	//}
+  background: url(http://placehold.it/728x90);
+  height: 90px;
+  margin: 60px auto 0;
+  width: 728px;
 }
