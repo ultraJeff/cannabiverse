@@ -1,5 +1,6 @@
 include ../mixins/flash-messages
 include ../mixins/logo
+include ../mixins/join-modal
 
 doctype html
 html(lang="en")
@@ -44,7 +45,8 @@ html(lang="en")
 						- var category = filters ? filters.category : ''
 						each link in navLinks
 							a.nav-item.nav-link(href=link.href, class=(category == link.key ? 'active' : null), role='menuitem')= link.label
-					a.btn.btn-squash.sign-up.d-none.d-lg-block(href='/keystone/signin') Sign Up Now!
+					//- a.btn.btn-squash.sign-up.d-none.d-lg-block(href='/keystone/signin') Sign Up Now!
+					button.btn.btn-squash.sign-up.d-none.d-lg-block(type="button", data-toggle="modal", data-target="#joinModal") Sign Up Now!
 					//- 	if user
 					//- 		if user.canAccessKeystone
 					//- 			li: a(href='/keystone') Open Keystone
@@ -87,8 +89,7 @@ html(lang="en")
 					li: a(href="https://cannabiverse.freshdesk.com/support/home") FAQS
 					li: a(href="#") Contact Us
 
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			//- p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+		+join-modal
 
 
 		//- JAVASCRIPT

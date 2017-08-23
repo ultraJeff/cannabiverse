@@ -12,10 +12,6 @@ $labels: ("research": $dark-sky-blue, "innovation": $squash, "news": $turquoise,
 	@include static-link($white);
 }
 
-.form-control {
-	border-radius: 5px;
-}
-
 // Iterate over menu items to apply unique background color
 @each $class, $color in $labels {
 	.badge-#{$class} {
@@ -36,9 +32,4 @@ $labels: ("research": $dark-sky-blue, "innovation": $squash, "news": $turquoise,
 	font-weight: 500;
 
 	@include static-link($white);
-}
-
-.navbar-default {
-	background-color: $white;
-	border: 0;
 }

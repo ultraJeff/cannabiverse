@@ -1,0 +1,15 @@
+include logo
+
+mixin join-modal
+	#joinModal.modal.fade(tabindex="-1", role="dialog")
+		.modal-dialog(role='document')
+			.modal-content.join-aside
+				.modal-body
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					.logo.white: +logo(false, 50)
+					.sign-up.mt-3
+						.info Join our community. Be the first to know.
+						.cta-text Sign up for our newsletter:
+						input.form-control(type="email", placeholder="Enter your email address")
+						button.cta.btn.btn-squash.text-uppercase Sign up now!
