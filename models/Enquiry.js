@@ -58,7 +58,8 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			templateName: 'enquiry-notification',
 			transport: 'mailgun',
 		}).send({
-			to: admins,
+			firstName: 'Jeff',
+			to: 'jefrfranklin@gmail.com',
 			from: {
 				name: 'Cannabiverse',
 				email: 'contact@cannabiverse.com',
