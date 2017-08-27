@@ -19,11 +19,21 @@ var _ = require('lodash');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Research', key: 'research', href: '/blog/research/' },
-		{ label: 'Innovation', key: 'innovation', href: '/blog/innovation/' },
-		{ label: 'News', key: 'news', href: '/blog/news/' },
-		{ label: 'Culture', key: 'culture', href: '/blog/culture/' },
-		{ label: 'Education', key: 'education', href: '/blog/education/' },
+		// { label: 'Research', key: 'research', href: '/blog/research/' },
+		// { label: 'Innovation', key: 'innovation', href: '/blog/innovation/' },
+		// { label: 'News', key: 'news', href: '/blog/news/' },
+		// { label: 'Culture', key: 'culture', href: '/blog/culture/' },
+		// { label: 'Education', key: 'education', href: '/blog/education/' },
+		{ label: 'Witness Videos', key: 'witness-videos', href: '#' },
+		{ label: 'The Word', key: 'the-word', href: '#' },
+		{ label: 'About CBD', key: 'about-cbd', href: '#' },
+	];
+	res.locals.cbdTypes = [
+		{ label: 'CBD for Cancer', key: 'research', href: '#' },
+		{ label: 'CBD for PTSD', key: 'innovation', href: '#' },
+		{ label: 'CBD for Chronic Pain', key: 'news', href: '#' },
+		{ label: 'CBD for Epilepsy', key: 'culture', href: '#' },
+		{ label: 'CBD for Autism', key: 'education', href: '#' },
 	];
 	res.locals.user = req.user;
 	next();

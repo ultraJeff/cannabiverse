@@ -5576,7 +5576,7 @@ body {
       font-size: 16px; } }
 
 h1 {
-  color: #4a90e2;
+  color: #1eab4b;
   font-family: Comfortaa;
   font-size: 2.25em;
   font-weight: 300;
@@ -5606,7 +5606,7 @@ h4 {
   letter-spacing: 2.2px; }
 
 h5 {
-  color: #4a90e2;
+  color: #1eab4b;
   font-family: Comfortaa;
   font-size: 2em;
   font-weight: 300;
@@ -5614,7 +5614,7 @@ h5 {
   text-transform: uppercase; }
 
 h6 {
-  color: #4a90e2;
+  color: #1eab4b;
   font-family: Comfortaa;
   font-size: 16px;
   font-weight: bold;
@@ -5623,7 +5623,7 @@ h6 {
   text-transform: uppercase; }
 
 header {
-  border-bottom: 2px solid #4a90e2;
+  border-bottom: 2px solid #1eab4b;
   margin-bottom: 15px;
   margin-top: 40px; }
   header h1 {
@@ -5648,13 +5648,15 @@ header {
     letter-spacing: 1.1px; }
 
 footer {
-  border-top: 2px solid #4a90e2;
+  border-top: 2px solid #1eab4b;
   margin-top: 60px;
   padding-bottom: 40px;
   padding-top: 25px; }
-  footer .logo:hover, footer .logo:active, footer .logo:focus {
-    color: inherit;
-    text-decoration: none; }
+  footer .logo {
+    color: #1eab4b; }
+    footer .logo:hover, footer .logo:active, footer .logo:focus {
+      color: inherit;
+      text-decoration: none; }
   footer .container {
     align-items: center;
     display: flex;
@@ -5721,20 +5723,20 @@ footer {
       .category-blade a > div > span {
         font-size: 18px; }
     .category-blade a:nth-child(1) {
-      background-image: url(../../images/bio-hacking-category-image.png); }
+      background-image: url(../../images/CBD-for-Cancer-haley-phelps.png); }
     .category-blade a:nth-child(2) {
-      background-image: url(../../images/power-category-image.png); }
+      background-image: url(../../images/CBD-for-PTSD-david-siglign.png); }
     .category-blade a:nth-child(3) {
-      background-image: url(../../images/money-category-image.png); }
+      background-image: url(../../images/CBD-for-Chronic-Pain-lotte-meijer.png); }
     .category-blade a:nth-child(4) {
-      background-image: url(../../images/culture-category-image.png); }
+      background-image: url(../../images/CBD-for-Epilepsy-brooke-cagle.png); }
     .category-blade a:nth-child(5) {
-      background-image: url(../../images/spirituality-category-image.png); }
+      background-image: url(../../images/CBD-for-Autism-ben-white.png); }
 
 .jumbotron.join-jumbotron {
   border-radius: 14px;
   align-items: center;
-  background-color: #4a90e2;
+  background-color: #176388;
   border: solid 1px #979797;
   display: flex;
   flex-flow: row wrap;
@@ -5793,7 +5795,7 @@ footer {
 .join-aside {
   align-items: center;
   border-radius: 14px;
-  background-color: #4a90e2;
+  background-color: #176388;
   border: solid 1px #979797;
   display: flex;
   flex-flow: column nowrap;
@@ -5906,7 +5908,7 @@ footer {
     text-decoration: none; }
 
 .badge-research {
-  background-color: #4a90e2;
+  background-color: #1eab4b;
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
@@ -5958,16 +5960,22 @@ footer {
 .logo {
   display: inline-flex;
   align-items: center; }
-  .logo > svg .a {
-    fill: none; }
-  .logo > svg .b {
-    stroke-width: 2;
-    stroke: #4a90e2; }
+  .logo > svg .st0 {
+    fill: #1eab4b; }
+  .logo > svg .st1 {
+    fill: #381B01;
+    stroke: #381B01;
+    stroke-width: 5; }
+  .logo > svg .st2 {
+    fill: #ffffff;
+    stroke: #ffffff;
+    stroke-linejoin: bevel; }
+  .logo > svg .st3 {
+    fill: #ffffff;
+    stroke: #ffffff; }
   @media (max-width: 575px) {
     .logo > svg {
       width: 50px; } }
-  .logo.white > svg .b {
-    stroke: #ffffff; }
   .logo > span {
     margin: 10px 0 0 20px; }
     @media (max-width: 575px) {

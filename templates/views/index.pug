@@ -39,10 +39,9 @@ block content
 				span.sr-only Next
 
 		section.category-blade(role="menubar")
-			//- var colors = ["dark-sky-blue", "squash", "turquoise", "pinkish-red", "muted-purple"]
-			each link, index in navLinks
+			each type, index in cbdTypes
 				a(href="#" role="menuitem")
-					div.badge(class="badge-" + link.label.toLowerCase()) #{link.label} <span class="fa fa-angle-right"></span>
+					div.badge(class="badge-" + type.key) #{type.label} <span class="fa fa-angle-right"></span>
 
 		+post-wall
 

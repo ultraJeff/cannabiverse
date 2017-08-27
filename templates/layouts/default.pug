@@ -45,7 +45,6 @@ html(lang="en")
 						- var category = filters ? filters.category : ''
 						each link in navLinks
 							a.nav-item.nav-link(href=link.href, class=(category == link.key ? 'active' : null), role='menuitem')= link.label
-					//- a.btn.btn-squash.sign-up.d-none.d-lg-block(href='/keystone/signin') Sign Up Now!
 					button.btn.btn-squash.sign-up.d-none.d-lg-block(type="button", data-toggle="modal", data-target="#joinModal") Sign Up Now!
 					//- 	if user
 					//- 		if user.canAccessKeystone

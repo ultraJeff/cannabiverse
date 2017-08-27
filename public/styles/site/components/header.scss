@@ -1,5 +1,5 @@
 header {
-	border-bottom: 2px solid $dark-sky-blue;
+	border-bottom: 2px solid $gods-green;
 	margin-bottom: 15px;
 	margin-top: 40px;
 
@@ -30,21 +30,5 @@ header {
 		text-transform: uppercase;
 	  font-weight: bold;
 	  letter-spacing: 1.1px;
-
-	// 		.navbar-nav {
-	// 			display: inline-block;
-	// 			float: none;
-
-	// 			> li[role=menuitem] > a {
-	// 			  color: $black;
-	// 			  font-family: Comfortaa;
-	// 			  font-size: $font-size-base;
-	// 			  font-weight: bold;
-	// 			  letter-spacing: 1.1px;
-	// 			  text-align: center;
-
-	// 				@include static-link;
-	// 			}
-	// 		}
 	}
 }

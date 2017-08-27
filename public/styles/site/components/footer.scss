@@ -1,10 +1,11 @@
 footer {
-	border-top: 2px solid $dark-sky-blue;
+	border-top: 2px solid $gods-green;
 	margin-top: 60px;
 	padding-bottom: 40px;
 	padding-top: 25px;
 
 	.logo {
+		color: $gods-green;
 		@include static-link;
 	}
 

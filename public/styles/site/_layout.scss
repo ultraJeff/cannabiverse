@@ -19,22 +19,27 @@
 	align-items: center;
 
 	> svg {
-		.a {
-			fill:none;
+		.st0{
+			fill: $gods-green;
 		}
-
-		.b {
-			stroke-width:2;
-			stroke: $dark-sky-blue;
+		.st1{
+			fill: #381B01;
+			stroke: #381B01;
+			stroke-width: 5;
+		}
+		.st2{
+			fill: $white;
+			stroke: $white;
+			stroke-linejoin: bevel;
+		}
+		.st3{
+			fill: $white;
+			stroke: $white;
 		}
 
 		@include media-breakpoint-down(xs) {
 			width: 50px;
 		}
-	}
-
-	&.white > svg .b {
-		stroke: $white;
 	}
 
 	> span {
