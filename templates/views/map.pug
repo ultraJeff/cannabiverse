@@ -1,0 +1,7 @@
+extends ../layouts/default
+
+block content
+	.map
+		#map
+		script(src="/js/map.js")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAljDWwIKnzMJr_yTsQMqxj3YRDWZjrDd4&libraries=places&callback=initMap" async defer)

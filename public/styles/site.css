@@ -5896,6 +5896,10 @@ footer {
   letter-spacing: 1px;
   padding: 15px 30px 10px 30px; }
 
+.map #map {
+  height: 400px;
+  width: 400px; }
+
 .btn {
   border-radius: 5px;
   font-size: 16px; }
