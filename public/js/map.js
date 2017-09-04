@@ -1,29 +1,41 @@
 var map;
+var service;
 var infowindow;
 
-function initMap() {
-	var pyrmont = {lat: -33.867, lng: 151.195};
-
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: pyrmont,
-		zoom: 15
+function initGeolocation() {
+	navigator.geolocation.getCurrentPosition(function(position) {
+	  initMap(position.coords.latitude, position.coords.longitude);
 	});
+}
 
-	infowindow = new google.maps.InfoWindow();
-	var service = new google.maps.places.PlacesService(map);
-	service.nearbySearch({
-		location: pyrmont,
-		radius: 500,
-		type: ['store']
-	}, callback);
+function initMap(lat, long) {
+  let sf = new google.maps.LatLng(37.7749, -122.4194);
+  let location = (lat && long) ? new google.maps.LatLng(lat, long) : sf;
+
+  map = new google.maps.Map(document.getElementById('map'), {
+      center: location,
+      zoom: 15
+    });
+
+  var request = {
+    location: location,
+    radius: '500',
+    query: 'dispensary'
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+
+  infowindow = new google.maps.InfoWindow();
 }
 
 function callback(results, status) {
-	if (status === google.maps.places.PlacesServiceStatus.OK) {
-		for (var i = 0; i < results.length; i++) {
-			createMarker(results[i]);
-		}
-	}
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
 }
 
 function createMarker(place) {
