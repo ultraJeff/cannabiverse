@@ -5625,7 +5625,7 @@ h6 {
 header {
   border-bottom: 2px solid #1eab4b;
   margin-bottom: 15px;
-  margin-top: 40px; }
+  padding-top: 40px; }
   header h1 {
     text-align: center; }
     header h1 > a {
@@ -5896,9 +5896,58 @@ footer {
   letter-spacing: 1px;
   padding: 15px 30px 10px 30px; }
 
-.map #map {
-  height: 400px;
-  width: 400px; }
+.map-page {
+  height: 100%; }
+  .map-page body {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%; }
+  .map-page .search-bar {
+    background-color: #6d6d72;
+    display: flex;
+    padding: 15px; }
+    .map-page .search-bar .form-inline {
+      position: relative;
+      width: 365px; }
+      .map-page .search-bar .form-inline::before {
+        content: "\f002";
+        font-family: FontAwesome;
+        left: 8px;
+        position: absolute;
+        top: 3px; }
+      .map-page .search-bar .form-inline input {
+        padding-left: 2rem;
+        width: 100%; }
+    .map-page .search-bar h2 {
+      color: #ffffff; }
+  .map-page main {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%; }
+    .map-page main .listings {
+      flex: 0 1 400px;
+      height: 100%;
+      overflow: auto; }
+      .map-page main .listings h3 {
+        padding: 15px; }
+      .map-page main .listings ul {
+        list-style-type: none;
+        padding: 0; }
+        .map-page main .listings ul li {
+          border-top: 1px solid #4a4a4a;
+          padding: 15px; }
+          .map-page main .listings ul li:first-child {
+            border-top: none; }
+          .map-page main .listings ul li .top-line {
+            align-items: center;
+            display: inline-flex; }
+          .map-page main .listings ul li b {
+            margin-left: 10px; }
+        .map-page main .listings ul span {
+          display: block; }
+    .map-page main #map {
+      flex: 1;
+      height: 100%; }
 
 .btn {
   border-radius: 5px;

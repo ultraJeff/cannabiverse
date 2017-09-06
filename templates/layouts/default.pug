@@ -3,7 +3,7 @@ include ../mixins/logo
 include ../mixins/join-modal
 
 doctype html
-html(lang="en")
+html(lang="en", class=section + '-page')
 
 	//- HTML HEADER
 	head
@@ -53,56 +53,43 @@ html(lang="en")
 					//- 	else
 					//- 		li: a(href='/keystone/signin') Sign In
 		//- BODY
+		//- The Intro block appears above flash messages (used for temporary information display)
+		block intro
+
+		//- Flash messages allow you to display once-off status messages to users, e.g. form
+		//- validation errors, success messages, etc.
+		+flash-messages(messages)
+
 		main
-
-			//- NOTE:
-			//- There is no .container wrapping class around body blocks to allow more flexibility in design.
-			//- Remember to include it in your templates when you override the intro and content blocks!
-
-			//- The Intro block appears above flash messages (used for temporary information display)
-			block intro
-
-			//- Flash messages allow you to display once-off status messages to users, e.g. form
-			//- validation errors, success messages, etc.
-			+flash-messages(messages)
 
 			//- The content block should contain the body of your template's content
 			block content
 
 
 		//- FOOTER
-		footer: .container
-			h5: a.logo(href='/'): +logo(true, 40)
-			.middle-section
-				ul.social-icons
-					li.fa.fa-facebook-official
-					li.fa.fa-instagram
-					li.fa.fa-twitter
-				.legal 2017 All Rights Reserved.
-			.links
-				ul.company
-					li: h6 Company
-					li: a(href="#") About
-				ul.support
-					li: h6 Support
-					li: a(href="https://cannabiverse.freshdesk.com/support/home") FAQS
-					li: a(href="/contact") Contact Us
+		if section != 'map'
+			footer: .container
+				h5: a.logo(href='/'): +logo(true, 40)
+				.middle-section
+					ul.social-icons
+						li.fa.fa-facebook-official
+						li.fa.fa-instagram
+						li.fa.fa-twitter
+					.legal 2017 All Rights Reserved.
+				.links
+					ul.company
+						li: h6 Company
+						li: a(href="#") About
+					ul.support
+						li: h6 Support
+						li: a(href="https://cannabiverse.freshdesk.com/support/home") FAQS
+						li: a(href="/contact") Contact Us
 
 		+join-modal
 
 
 		//- JAVASCRIPT
-
-		//- jQuery 1.11.3 is included by default, and required by both Bootstrap
-		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-		//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		//- script(src='/js/jquery/jquery-2.1.4.min.js')
-
-		//- Customise which Bootstrap javascript files are served by including
-		//- them specifically here, instead of bootstrap-3.3.5.min.js
-		//- script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
-
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 

@@ -1,6 +1,85 @@
-.map {
-	#map {
-		height: 400px;
-		width: 400px;
+.map-page {
+	height: 100%;
+
+	body {
+		display: flex;
+		flex-flow: column nowrap;
+		height: 100%;
+	}
+
+	.search-bar {
+		background-color: $slate-grey;
+		display: flex;
+		padding: 15px;
+
+		.form-inline {
+			position: relative;
+			width: 365px;
+
+			&::before {
+				content: "\f002";
+				font-family: FontAwesome;
+				left: 8px;
+				position: absolute;
+				top: 3px;
+			}
+
+			input {
+				padding-left: 2rem;
+				width: 100%;
+			}
+		}
+
+		h2 {
+			color: $white;
+		}
+	}
+
+	main {
+		display: flex;
+		flex-flow: row nowrap;
+		height: 100%;
+
+		.listings {
+			flex: 0 1 400px;
+			height: 100%;
+			overflow: auto;
+
+			h3 {
+				padding: 15px;
+			}
+
+			ul {
+				list-style-type: none;
+				padding: 0;
+
+				li {
+					border-top: 1px solid $greyish-brown;
+					padding: 15px;
+
+					&:first-child {
+						border-top: none;
+					}
+
+					.top-line {
+						align-items: center;
+						display: inline-flex;
+					}
+
+					b {
+						margin-left: 10px;
+					}
+				}
+
+				span {
+					display: block;
+				}
+			}
+		}
+
+		#map {
+			flex: 1;
+			height: 100%;
+		}
 	}
 }
