@@ -27,6 +27,7 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Witness Videos', key: 'witness-videos', href: '#' },
 		{ label: 'The Word', key: 'the-word', href: '#' },
 		{ label: 'About CBD', key: 'about-cbd', href: '#' },
+		{ label: 'Finder', key: 'finder-map', href: '/map' }
 	];
 	res.locals.cbdTypes = [
 		{ label: 'CBD for Cancer', key: 'research', href: '#' },
