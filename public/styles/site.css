@@ -5859,12 +5859,21 @@ footer {
         height: 28%; }
       .post-wall .story.headline-story h4, .post-wall .story.important-story h4 {
         font-size: 22px; }
+    .post-wall .story.headline-story .story-summary > .story-title {
+      height: 100px;
+      /* Fallback for non-webkit */
+      -webkit-line-clamp: 3; }
+    .post-wall .story.important-story .story-summary > .story-title {
+      height: 96;
+      /* Fallback for non-webkit */
+      -webkit-line-clamp: 4; }
     .post-wall .story .story-summary {
       background-color: #ffffff;
       bottom: 0;
       height: 45%;
       left: 0;
       opacity: 0.8;
+      padding: 20px;
       position: absolute;
       right: 0;
       transform: translateZ(0); }
@@ -5873,8 +5882,16 @@ footer {
         position: absolute;
         top: -10px; }
       .post-wall .story .story-summary > .story-title {
-        margin-left: 20px;
-        margin-top: 30px; }
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        display: -webkit-box;
+        display: block;
+        /* Fallback for non-webkit */
+        height: 72px;
+        /* Fallback for non-webkit */
+        max-width: 700px;
+        overflow: hidden;
+        text-overflow: ellipsis; }
       .post-wall .story .story-summary > .story-brief {
         margin-left: 20px;
         margin-top: 10px; }

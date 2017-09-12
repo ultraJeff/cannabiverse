@@ -1,3 +1,9 @@
+// Used on main page and _blog (should incorporate with _blog somehow)
+
+$font-size: 18px;
+$line-height: 1;
+$lines-to-show: 4;
+
 .post-wall {
 	margin-top: 50px;
 
@@ -29,12 +35,23 @@
 			}
 		}
 
+		&.headline-story .story-summary > .story-title {
+			height: 100px; /* Fallback for non-webkit */
+			-webkit-line-clamp: 3;
+		}
+
+		&.important-story .story-summary > .story-title {
+			height: 96; /* Fallback for non-webkit */
+			-webkit-line-clamp: 4;
+		}
+
 		.story-summary {
 			background-color: $white;
 			bottom: 0;
 			height: 45%;
 			left: 0;
 			opacity: 0.8;
+			padding: 20px;
 			position: absolute;
 			right: 0;
 			transform: translateZ(0);
@@ -46,8 +63,14 @@
 			}
 
 			> .story-title {
-				margin-left: 20px;
-				margin-top: 30px;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 4;
+				display: -webkit-box;
+				display: block; /* Fallback for non-webkit */
+				height: 76px; /* Fallback for non-webkit */
+				max-width: 700px;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 
 			> .story-brief {

@@ -9,7 +9,7 @@ block content
 				h2 Invalid Post.
 			else
 				header
-					h1= data.post.title
+					h2= data.post.title
 					h5 Posted
 						if data.post.publishedDate
 							| on #{data.post._.publishedDate.format('MMMM Do, YYYY')}
@@ -24,6 +24,6 @@ block content
 						if data.post.author
 							| by #{data.post.author.name.first}
 				.post
-					if data.post.image.exists
-						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
+					//-if data.post.image.exists
+						//-.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
 					!= data.post.content.full

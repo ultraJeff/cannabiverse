@@ -8,9 +8,10 @@ mixin post-card(post, index)
 						//- img(src=post._.image.fit(160,160)).img
 				.story-summary
 					if data.category
-						.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+						.badge.badge-research= data.category.name
 					h3.story-title= post.title
-					.story-brief!= post.content.brief
+					//-.story-brief!= post.content.brief
 		if index == 1 || index == 4
 			a.story(href='/blog/post/' + post.slug)
 				if post.image.exists
@@ -19,9 +20,10 @@ mixin post-card(post, index)
 						//- img(src=post._.image.fit(160,160)).img
 				.story-summary
 					if data.category
-						.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+						.badge.badge-research= data.category.name
 					h4.story-title= post.title
-					.story-brief!= post.content.brief
+					//-.story-brief!= post.content.brief
 		if index == 2 || index == 3
 			a.important-story.story(href='/blog/post/' + post.slug)
 				if post.image.exists
@@ -30,9 +32,10 @@ mixin post-card(post, index)
 						//- img(src=post._.image.fit(160,160)).img
 				.story-summary
 					if data.category
-						.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+						.badge.badge-research= data.category.name
 					h4.story-title= post.title
-					.story-brief!= post.content.brief
+					//-.story-brief!= post.content.brief
 
 		//- p.lead.text-muted Posted
 		//- 	if post.publishedDate

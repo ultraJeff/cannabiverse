@@ -24,8 +24,8 @@ exports.initLocals = function (req, res, next) {
 		// { label: 'News', key: 'news', href: '/blog/news/' },
 		// { label: 'Culture', key: 'culture', href: '/blog/culture/' },
 		// { label: 'Education', key: 'education', href: '/blog/education/' },
-		{ label: 'Witness Videos', key: 'witness-videos', href: '#' },
-		{ label: 'The Word', key: 'the-word', href: '#' },
+		{ label: 'Witness Videos', key: 'witness-videos', href: '/blog' },
+		{ label: 'The Word', key: 'the-word', href: '/blog' },
 		{ label: 'About CBD', key: 'about-cbd', href: '#' },
 		{ label: 'Finder', key: 'finder-map', href: '/map' }
 	];
