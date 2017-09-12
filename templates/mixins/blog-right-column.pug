@@ -1,0 +1,14 @@
+include join-aside
+
+mixin blog-right-column(data)
+	.col-lg-4
+		+join-aside
+		if data.categories
+			.d-lg-block.d-none
+				h2 Categories
+				.list-group
+					a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
+					each cat in data.categories
+						a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+		aside.add-300-short
+		aside.add-300-tall

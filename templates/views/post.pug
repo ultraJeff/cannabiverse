@@ -1,29 +1,45 @@
 extends ../layouts/default
 
+include ../mixins/blog-right-column
+include ../mixins/join-jumbotron
+
 block content
-	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-		article
-			p: a(href='/blog') &larr; back to the blog
-			hr
-			if !data.post
-				h2 Invalid Post.
-			else
-				header
-					h2= data.post.title
-					h5 Posted
-						if data.post.publishedDate
-							| on #{data.post._.publishedDate.format('MMMM Do, YYYY')}
-						if data.post.categories && data.post.categories.length
-							| in
-							each cat, cat_i in data.post.categories
-								a(href='/blog/' + cat.key)= cat.name
-								if cat_i < data.post.categories.length - 1
-									| ,
-								else
-									|
-						if data.post.author
-							| by #{data.post.author.name.first}
-				.post
-					//-if data.post.image.exists
-						//-.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
-					!= data.post.content.full
+	.container.blog-post
+		.row
+			.col-lg-8
+				article
+					p: a(href='/blog') &larr; back to the blog
+
+					if data.post.category
+						h3.mt-3.badge.badge-research= data.category.name
+					else if data.post.categories
+						each category in data.post.categories
+							h3.mt-3.badge.badge-research= category.name
+
+					if !data.post
+						h2 Invalid Post.
+					else
+						h2= data.post.title
+						h4
+							//- if data.post.publishedDate
+							//- 	| on #{data.post._.publishedDate.format('MMMM Do, YYYY')}
+							//- if data.post.categories && data.post.categories.length
+							//- 	| in
+							//- 	each cat, cat_i in data.post.categories
+							//- 		a(href='/blog/' + cat.key)= cat.name
+							//- 		if cat_i < data.post.categories.length - 1
+							//- 			| ,
+							//- 		else
+							//- 			|
+							if data.post.author
+								| #{data.post.author.name.first} #{data.post.author.name.last}
+						.post
+							if data.post.image.exists
+								.image-wrap.mt-5.mb-5: img(src=data.post._.image.fit(720)).d-block.w-100
+							!= data.post.content.brief
+							!= data.post.content.full
+
+					aside.add-728.d-none.d-xl-block
+
+			+blog-right-column(data)
+		+join-jumbotron

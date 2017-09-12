@@ -5887,7 +5887,7 @@ footer {
         display: -webkit-box;
         display: block;
         /* Fallback for non-webkit */
-        height: 72px;
+        height: 76px;
         /* Fallback for non-webkit */
         max-width: 700px;
         overflow: hidden;
@@ -5912,6 +5912,17 @@ footer {
   font-size: 30px;
   letter-spacing: 1px;
   padding: 15px 30px 10px 30px; }
+
+.blog-post h2 {
+  display: inline-block;
+  font-family: 'Comfortaa', 'Arial', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-top: 20px; }
+
+.blog-post h4 {
+  text-transform: uppercase;
+  letter-spacing: 1.6px; }
 
 .map-page {
   height: 100%; }

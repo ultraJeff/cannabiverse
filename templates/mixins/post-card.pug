@@ -4,8 +4,8 @@ mixin post-card(post, index)
 			a.headline-story.story(href='/blog/post/' + post.slug)
 				if post.image.exists
 					.story-image
-						img(src="https://placehold.it/720x500").img-fluid
-						//- img(src=post._.image.fit(160,160)).img
+						//- img(src="https://placehold.it/720x500").img-fluid
+						img(src=post._.image.fit(720,500)).img-fluid
 				.story-summary
 					if data.category
 						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
@@ -16,8 +16,8 @@ mixin post-card(post, index)
 			a.story(href='/blog/post/' + post.slug)
 				if post.image.exists
 					.story-image
-						img(src="https://placehold.it/335x250").img-fluid
-						//- img(src=post._.image.fit(160,160)).img
+						//- img(src="https://placehold.it/335x250").img-fluid
+						img(src=post._.image.fit(335,250)).img-fluid
 				.story-summary
 					if data.category
 						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
@@ -28,8 +28,8 @@ mixin post-card(post, index)
 			a.important-story.story(href='/blog/post/' + post.slug)
 				if post.image.exists
 					.story-image
-						img(src="https://placehold.it/335x500").img-fluid
-						//- img(src=post._.image.fit(160,160)).img
+						//- img(src="https://placehold.it/335x500").img-fluid
+						img(src=post._.image.fit(335,500)).img-fluid
 				.story-summary
 					if data.category
 						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
