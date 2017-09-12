@@ -40,20 +40,20 @@ block content
 								.row
 									.col
 										+post-card(data.posts.results[0], 0)
+								//- The following trick creates a row of four offset blog entries per row
 								if data.posts.results.length > 1
-									.row
-										.col-lg-6
-											+post-card(data.posts.results[1], 1)
-											if data.posts.results.length > 2
-												+post-card(data.posts.results[2], 2)
-
-										if data.posts.results.length > 3
+									- for (var i = 1; i < data.posts.results.length; i = i + 4)
+										.row
 											.col-lg-6
-												+post-card(data.posts.results[3], 3)
-												if data.posts.results.length > 4
-													+post-card(data.posts.results[4], 4)
-								//- each post, index in data.posts.results
-								//- 	+post-card(post, index)
+												+post-card(data.posts.results[i], i)
+												if data.posts.results.length > i + 1
+													+post-card(data.posts.results[i + 1], i + 1)
+
+											if data.posts.results.length > i + 2
+												.col-lg-6
+													+post-card(data.posts.results[i + 2], i + 2)
+													if data.posts.results.length > i + 3
+														+post-card(data.posts.results[i + 3], i + 3)
 								.row
 									aside.add-728.d-none.d-xl-block
 

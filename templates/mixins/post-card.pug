@@ -1,56 +1,57 @@
 mixin post-card(post, index)
-	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		if index == 0
-			a.headline-story.story(href='/blog/post/' + post.slug)
-				if post.image.exists
-					.story-image
-						//- img(src="https://placehold.it/720x500").img-fluid
-						img(src=post._.image.fit(720,500)).img-fluid
-				.story-summary
-					if data.category
-						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
-						.badge.badge-research= data.category.name
-					h3.story-title= post.title
-					//-.story-brief!= post.content.brief
-		if index == 1 || index == 4
-			a.story(href='/blog/post/' + post.slug)
-				if post.image.exists
-					.story-image
-						//- img(src="https://placehold.it/335x250").img-fluid
-						img(src=post._.image.fit(335,250)).img-fluid
-				.story-summary
-					if data.category
-						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
-						.badge.badge-research= data.category.name
-					h4.story-title= post.title
-					//-.story-brief!= post.content.brief
-		if index == 2 || index == 3
-			a.important-story.story(href='/blog/post/' + post.slug)
-				if post.image.exists
-					.story-image
-						//- img(src="https://placehold.it/335x500").img-fluid
-						img(src=post._.image.fit(335,500)).img-fluid
-				.story-summary
-					if data.category
-						//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
-						.badge.badge-research= data.category.name
-					h4.story-title= post.title
-					//-.story-brief!= post.content.brief
+	if post
+		.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+			if index == 0
+				a.headline-story.story(href='/blog/post/' + post.slug)
+					if post.image.exists
+						.story-image
+							//- img(src="https://placehold.it/720x500").img-fluid
+							img(src=post._.image.fill(700,500)).img-fluid
+					.story-summary
+						if data.category
+							//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+							.badge.badge-research= data.category.name
+						h3.story-title= post.title
+						//-.story-brief!= post.content.brief
+			else if index % 4 == 0 || index % 4 == 1
+				a.story(href='/blog/post/' + post.slug)
+					if post.image.exists
+						.story-image
+							//- img(src="https://placehold.it/335x250").img-fluid
+							img(src=post._.image.fill(335,250)).img-fluid
+					.story-summary
+						if data.category
+							//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+							.badge.badge-research= data.category.name
+						h4.story-title= post.title
+						//-.story-brief!= post.content.brief
+			if index % 4 == 2 || index % 4 == 3
+				a.important-story.story(href='/blog/post/' + post.slug)
+					if post.image.exists
+						.story-image
+							//- img(src="https://placehold.it/335x500").img-fluid
+							img(src=post._.image.fill(335,500)).img-fluid
+					.story-summary
+						if data.category
+							//-.badge(class="badge-" + data.category.name.toLowerCase())= data.category.name
+							.badge.badge-research= data.category.name
+						h4.story-title= post.title
+						//-.story-brief!= post.content.brief
 
-		//- p.lead.text-muted Posted
-		//- 	if post.publishedDate
-		//- 		| on #{post._.publishedDate.format('MMMM Do, YYYY')}
-		//- 	if post.categories && post.categories.length
-		//- 		| in
-		//- 		each cat, i in post.categories
-		//- 			a(href='/blog/' + cat.key)= cat.name
-		//- 			if i < post.categories.length - 1
-		//- 				| ,
-		//- 			else
-		//- 				|
-		//- 	if post.author
-		//- 		| by #{post.author.name.first}
+			//- p.lead.text-muted Posted
+			//- 	if post.publishedDate
+			//- 		| on #{post._.publishedDate.format('MMMM Do, YYYY')}
+			//- 	if post.categories && post.categories.length
+			//- 		| in
+			//- 		each cat, i in post.categories
+			//- 			a(href='/blog/' + cat.key)= cat.name
+			//- 			if i < post.categories.length - 1
+			//- 				| ,
+			//- 			else
+			//- 				|
+			//- 	if post.author
+			//- 		| by #{post.author.name.first}
 
-		//- p!= post.content.brief
-		//- if post.content.extended
-		//- 	p.read-more: a(href='/blog/post/' + post.slug) Read more...
+			//- p!= post.content.brief
+			//- if post.content.extended
+			//- 	p.read-more: a(href='/blog/post/' + post.slug) Read more...
