@@ -41,7 +41,7 @@ $lines-to-show: 4;
 		}
 
 		&.important-story .story-summary > .story-title {
-			height: 96; /* Fallback for non-webkit */
+			height: 96px; /* Fallback for non-webkit */
 			-webkit-line-clamp: 4;
 		}
 

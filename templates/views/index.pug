@@ -5,38 +5,27 @@ include ../mixins/post-wall
 
 block content
 	.container.mt-5
-		#main-carousel.carousel.slide(data-ride="carousel")
-			ol.carousel-indicators
-				li.active(data-target="#main-carousel", data-slide-to="0")
-				li(data-target="#main-carousel", data-slide-to="1")
-				li(data-target="#main-carousel", data-slide-to="2")
-				li(data-target="#main-carousel", data-slide-to="3")
-				li(data-target="#main-carousel", data-slide-to="4")
+		if carousels.length
+			#main-carousel.carousel.slide(data-ride="carousel")
+				ol.carousel-indicators
+					li.active(data-target="#main-carousel", data-slide-to="0")
+					li(data-target="#main-carousel", data-slide-to="1")
+					li(data-target="#main-carousel", data-slide-to="2")
+					li(data-target="#main-carousel", data-slide-to="3")
+					li(data-target="#main-carousel", data-slide-to="4")
+				.carousel-inner
+					each image, index in carousels[0].images
+						.carousel-item(class=(index == 0 ? 'active' : null))
+							img.d-block.w-100(src=image.secure_url, alt=carousels[0].captions[index])
+							.carousel-caption.d-none.d-md-block #{carousels[0].captions[index]}
 
-			.carousel-inner
-				.carousel-item.active
-					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
-					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
-				.carousel-item
-					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
-					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
-				.carousel-item
-					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
-					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
-				.carousel-item
-					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
-					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
-				.carousel-item
-					img.d-block.w-100(src="http://placehold.it/1440x550" alt="Carousel Slide")
-					.carousel-caption.d-none.d-md-block Cannabis is not just for pot heads.
-
-			//- controls
-			a.left.carousel-control-prev(href="#main-carousel", role="button", data-slide="prev")
-				span.carousel-control-prev-icon(aria-hidden="true")
-				span.sr-only Previous
-			a.right.carousel-control-next(href="#main-carousel", role="button", data-slide="next")
-				span.carousel-control-next-icon(aria-hidden="true")
-				span.sr-only Next
+				//- controls
+				a.left.carousel-control-prev(href="#main-carousel", role="button", data-slide="prev")
+					span.carousel-control-prev-icon(aria-hidden="true")
+					span.sr-only Previous
+				a.right.carousel-control-next(href="#main-carousel", role="button", data-slide="next")
+					span.carousel-control-next-icon(aria-hidden="true")
+					span.sr-only Next
 
 		section.category-blade(role="menubar")
 			each type, index in cbdTypes

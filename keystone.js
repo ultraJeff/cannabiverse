@@ -34,6 +34,7 @@ keystone.import('models');
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
+	//Seems like you could act React/Angular here!
 	_: require('lodash'),
 	env: keystone.get('env'),
 	utils: keystone.utils,
@@ -47,6 +48,7 @@ keystone.set('routes', require('./routes'));
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	posts: ['posts', 'post-categories'],
+	carousels: 'carousels',
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users'
