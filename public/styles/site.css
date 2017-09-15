@@ -5852,6 +5852,7 @@ footer {
     display: block;
     height: 250px;
     margin: 15px 0;
+    overflow: hidden;
     position: relative; }
     .post-wall .story.headline-story, .post-wall .story.important-story {
       height: 500px; }

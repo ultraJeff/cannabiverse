@@ -32,7 +32,7 @@ exports.initLocals = function (req, res, next) {
 	res.locals.cbdTypes = [
 		{ label: 'CBD for Cancer', key: 'research', href: '#' },
 		{ label: 'CBD for PTSD', key: 'innovation', href: '#' },
-		{ label: 'CBD for Chronic Pain', key: 'news', href: '#' },
+		{ label: 'CBD for Pain', key: 'news', href: '#' },
 		{ label: 'CBD for Epilepsy', key: 'culture', href: '#' },
 		{ label: 'CBD for Autism', key: 'education', href: '#' },
 	];

@@ -9,10 +9,15 @@ block content
 			#main-carousel.carousel.slide(data-ride="carousel")
 				ol.carousel-indicators
 					li.active(data-target="#main-carousel", data-slide-to="0")
-					li(data-target="#main-carousel", data-slide-to="1")
-					li(data-target="#main-carousel", data-slide-to="2")
-					li(data-target="#main-carousel", data-slide-to="3")
-					li(data-target="#main-carousel", data-slide-to="4")
+					//- Change this to a for loop
+					if carousels.length > 1
+						li(data-target="#main-carousel", data-slide-to="1")
+					if carousels.length > 2
+						li(data-target="#main-carousel", data-slide-to="2")
+					if carousels.length > 3
+						li(data-target="#main-carousel", data-slide-to="3")
+					if carousels.length > 4
+						li(data-target="#main-carousel", data-slide-to="4")
 				.carousel-inner
 					each image, index in carousels[0].images
 						.carousel-item(class=(index == 0 ? 'active' : null))
@@ -20,18 +25,19 @@ block content
 							.carousel-caption.d-none.d-md-block #{carousels[0].captions[index]}
 
 				//- controls
-				a.left.carousel-control-prev(href="#main-carousel", role="button", data-slide="prev")
-					span.carousel-control-prev-icon(aria-hidden="true")
-					span.sr-only Previous
-				a.right.carousel-control-next(href="#main-carousel", role="button", data-slide="next")
-					span.carousel-control-next-icon(aria-hidden="true")
-					span.sr-only Next
+				if carousels.length > 1
+					a.left.carousel-control-prev(href="#main-carousel", role="button", data-slide="prev")
+						span.carousel-control-prev-icon(aria-hidden="true")
+						span.sr-only Previous
+					a.right.carousel-control-next(href="#main-carousel", role="button", data-slide="next")
+						span.carousel-control-next-icon(aria-hidden="true")
+						span.sr-only Next
 
 		section.category-blade(role="menubar")
 			each type, index in cbdTypes
 				a(href="#" role="menuitem")
 					div.badge(class="badge-research") #{type.label} <span class="fa fa-angle-right"></span>
 
-		+post-wall
+		+post-wall(data.posts)
 
 		+join-jumbotron

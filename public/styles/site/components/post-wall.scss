@@ -20,6 +20,7 @@ $lines-to-show: 4;
 		display: block;
 		height: 250px;
 		margin: 15px 0;
+		overflow: hidden;
 		position: relative;
 
 		&.headline-story,

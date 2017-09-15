@@ -1,4 +1,4 @@
-mixin post-wall
+mixin post-wall(posts)
 	.post-wall
 		.container-fluid
 			.row
@@ -8,23 +8,39 @@ mixin post-wall
 						span.fa.fa-facebook-official
 						span Get Our Facebook Updates!
 			.row
-				.col-md-8: .headline-story.story
+				.col-md-8: a.headline-story.story(href='/blog/post/' + posts.results[0].slug)
+					if posts.results[0].image.exists
+						.story-image
+							img(src=posts.results[0]._.image.fill(710,500)).img-fluid.w-100
 					.story-summary
-						.badge.badge-research Innovation
-						h3.story-title Oxford University to Launch Study on Medical Benefits of Marijuana
-				.col-md-4: .important-story.story
+						if data.category
+							.badge.badge-research= data.category.name
+						h3.story-title= posts.results[0].title
+				.col-md-4: a.important-story.story(href='/blog/post/' + posts.results[1].slug)
+					if posts.results[1].image.exists
+						.story-image
+							img(src=posts.results[1]._.image.fill(340,500)).img-fluid.w-100
 					.story-summary
-						.badge.badge-research Education
-						h4.story-title Cannabis Oil Distillate: A Different Kind of Concentrate
+						if data.category
+							.badge.badge-research= data.category.name
+						h4.story-title= posts.results[1].title
 			.row
-				.col-md-4: .story
+				.col-md-4: a.story(href='/blog/post/' + posts.results[2].slug)
+					if posts.results[2].image.exists
+						.story-image
+							img(src=posts.results[2]._.image.fill(340,250)).img-fluid.w-100
 					.story-summary
-						.badge.badge-research Research
-						h4.story-title How Long Does THC Stay in Your System?
-				.col-md-4: .story
+						if data.category
+							.badge.badge-research= data.category.name
+						h4.story-title= posts.results[2].title
+				.col-md-4: a.story(href='/blog/post/' + posts.results[3].slug)
+					if posts.results[3].image.exists
+						.story-image
+							img(src=posts.results[3]._.image.fill(340,250)).img-fluid.w-100
 					.story-summary
-						.badge.badge-research Culture
-						h4.story-title How Long Does THC Stay in Your System?
+						if data.category
+							.badge.badge-research= data.category.name
+						h4.story-title= posts.results[3].title
 				.col-md-4: aside.add-300-short
 			.row
 				aside.add-728
