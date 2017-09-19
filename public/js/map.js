@@ -22,7 +22,7 @@ function initGeolocation() {
 }
 
 function initMap(lat, long) {
-  let sf = new google.maps.LatLng(37.7749, -122.4194);
+  let sf = new google.maps.LatLng(43.6532, -79.3832);
   var location = (lat && long) ? new google.maps.LatLng(lat, long) : sf;
 
   map = new google.maps.Map(document.getElementById('map'), {
