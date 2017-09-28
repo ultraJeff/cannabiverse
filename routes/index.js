@@ -19,21 +19,40 @@
  */
 
 var keystone = require('keystone');
+var bodyParser = require('body-parser');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
+// keystone.pre('routes', middleware.loadSponsors);
 keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
+	auth: importRoutes('./auth'),
 };
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	// Views
+
+	// Browserification
+	// app.get('/js/packages.js', browserify(clientConfig.packages, {
+	// 	cache: true,
+	// 	precompile: true,
+	// }));
+
+	// app.use('/js', browserify('./client/scripts', {
+	// 	external: clientConfig.packages,
+	// 	transform: [
+	// 		babelify.configure({
+	// 			presets: ['es2015', 'react']
+	// 		}),
+	// 	],
+	// }));
+
+	// Website Views
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
@@ -41,7 +60,20 @@ exports = module.exports = function (app) {
 	app.all('/contact', routes.views.contact);
 	app.all('/map', routes.views.map);
 
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
+	// Authentication
+	app.all('/auth/confirm', routes.auth.confirm);
+
+	// Session
+	app.all('/join', routes.views.session.join);
+	app.all('/signin', routes.views.session.signin);
+	app.get('/signout', routes.views.session.signout);
+	app.all('/forgot-password', routes.views.session['forgot-password']);
+	app.all('/reset-password/:key', routes.views.session['reset-password']);
+
+	// User
+	app.all('/me*', middleware.requireUser);
+	app.all('/me', routes.views.me);
+	app.all('/me/create/post', routes.views.createPost);
+	app.all('/me/create/link', routes.views.createLink);
 
 };
