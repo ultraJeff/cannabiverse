@@ -36,7 +36,14 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'CBD for Epilepsy', key: 'culture', href: '#' },
 		{ label: 'CBD for Autism', key: 'education', href: '#' },
 	];
+
 	res.locals.user = req.user;
+
+	res.locals.page = {
+		title: 'God\'s Greenery',
+		path: req.url.split("?")[0] // strip the query - handy for redirecting back to the page
+	};
+
 	next();
 };
 
@@ -62,7 +69,7 @@ exports.flashMessages = function (req, res, next) {
 exports.requireUser = function (req, res, next) {
 	if (!req.user) {
 		req.flash('error', 'Please sign in to access this page.');
-		res.redirect('/keystone/signin');
+		res.redirect('/signin');
 	} else {
 		next();
 	}

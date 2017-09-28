@@ -1,6 +1,7 @@
 include ../mixins/flash-messages
 include ../mixins/logo
 include ../mixins/join-modal
+include ../mixins/auth/auth-forms
 
 doctype html
 html(lang="en", class=section + '-page')
@@ -64,6 +65,14 @@ html(lang="en", class=section + '-page')
 
 			//- The content block should contain the body of your template's content
 			block content
+
+			//- MODALS
+			block modal
+			if !user
+				#modal-auth(tabindex="-1", role="dialog", aria-labelledby="signin", aria-hidden="true").modal.fade
+					.modal-dialog
+						.modal-content
+							+auth-forms({ modal: true, initial: 'signin' })
 
 
 		//- FOOTER
