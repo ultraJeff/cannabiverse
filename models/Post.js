@@ -1,3 +1,4 @@
+var async = require('async');
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
@@ -8,7 +9,8 @@ var Types = keystone.Field.Types;
 
 var Post = new keystone.List('Post', {
 	map: { name: 'title' },
-	autokey: { path: 'slug', from: 'title', unique: true },
+	track: true,
+	autokey: { path: 'slug', from: 'title', unique: true }
 });
 
 Post.add({
@@ -24,9 +26,67 @@ Post.add({
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 });
 
-Post.schema.virtual('content.full').get(function () {
+/**
+ * Virtuals
+ * ========
+ */
+
+Post.schema.virtual('content.full').get(function() {
 	return this.content.extended || this.content.brief;
 });
 
+
+/**
+ * Relationships
+ * =============
+ */
+
+Post.relationship({ ref: 'PostComment', refPath: 'post', path: 'comments' });
+
+/**
+ * Notifications
+ * =============
+ */
+
+Post.schema.methods.notifyAdmins = function(callback) {
+	var post = this;
+	// Method to send the notification email after data has been loaded
+	var sendEmail = function(err, results) {
+		if (err) return callback(err);
+		async.each(results.admins, function(admin, done) {
+			new keystone.Email('admin-notification-new-post').send({
+				admin: admin.name.first || admin.name.full,
+				author: results.author ? results.author.name.full : 'Somebody',
+				title: post.title,
+				keystoneURL: 'http://gods-greenery.herokuapp.com/keystone/post/' + post.id,
+				subject: 'New Post to God\'s Greenery'
+			}, {
+				to: admin,
+				from: {
+					name: 'God\'s Greenery',
+					email: 'contact@gods-greenery.herokuapp.com'
+				}
+			}, done);
+		}, callback);
+	}
+	// Query data in parallel
+	async.parallel({
+		author: function(next) {
+			if (!post.author) return next();
+			keystone.list('User').model.findById(post.author).exec(next);
+		},
+		admins: function(next) {
+			keystone.list('User').model.find().where('isAdmin', true).exec(next)
+		}
+	}, sendEmail);
+};
+
+
+/**
+ * Registration
+ * ============
+ */
+
+Post.defaultSort = '-publishedDate';
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
 Post.register();

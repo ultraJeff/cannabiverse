@@ -7,7 +7,7 @@ var Types = keystone.Field.Types;
  */
 var User = new keystone.List('User', {
 	track: true,
-	autokey: { path: 'key', from: 'name', unique: true }
+	autokey: { path: 'key', from: 'id', unique: true }
 });
 
 User.add({
