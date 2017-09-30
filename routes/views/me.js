@@ -30,8 +30,8 @@ exports = module.exports = function(req, res) {
 	view.on('post', { action: 'profile.details' }, function(next) {
 
 		req.user.getUpdateHandler(req).process(req.body, {
-			fields: 'name, email, notifications.posts,' +
-			'website, isPublic, bio, photo',
+			fields: 'name, email,' +
+			'isPublic, bio, photo',
 			flashErrors: true
 		}, function(err) {
 

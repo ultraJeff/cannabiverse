@@ -30,8 +30,7 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes('./views'),
-	auth: importRoutes('./auth'),
+	views: importRoutes('./views')
 };
 
 // Setup Route Bindings
@@ -54,14 +53,14 @@ exports = module.exports = function (app) {
 
 	// Website Views
 	app.get('/', routes.views.index);
+	app.get('/member/:member', routes.views.member);
+	app.get('/links', routes.views.links);
+	app.get('/links/:tag?', routes.views.links);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 	app.all('/map', routes.views.map);
-
-	// Authentication
-	app.all('/auth/confirm', routes.auth.confirm);
 
 	// Session
 	app.all('/join', routes.views.session.join);
