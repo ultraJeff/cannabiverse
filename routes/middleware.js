@@ -47,6 +47,27 @@ exports.initLocals = function (req, res, next) {
 	next();
 };
 
+/**
+	Inits the error handler functions into `req`
+*/
+
+exports.initErrorHandlers = function(req, res, next) {
+	res.err = function(err, title, message) {
+		res.status(500).render('errors/500', {
+			err: err,
+			errorTitle: title,
+			errorMsg: message
+		});
+	}
+	res.notfound = function(title, message) {
+		res.status(404).render('errors/404', {
+			errorTitle: title,
+			errorMsg: message
+		});
+	}
+	next();
+};
+
 
 /**
 	Fetches and clears the flashMessages before a view is rendered
@@ -74,3 +95,23 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
+
+/**
+	Returns a closure that can be used within views to change a parameter in the query string
+	while preserving the rest.
+*/
+
+var qs_set = exports.qs_set = function(req, res) {
+	return function qs_set(obj) {
+		var params = _.clone(req.query);
+		for (var i in obj) {
+			if (obj[i] === undefined || obj[i] === null) {
+				delete params[i];
+			} else if (obj.hasOwnProperty(i)) {
+				params[i] = obj[i];
+			}
+		}
+		var qs = querystring.stringify(params);
+		return req.path + (qs ? '?' + qs : '');
+	}
+}

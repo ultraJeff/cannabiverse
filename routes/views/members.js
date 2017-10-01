@@ -13,32 +13,32 @@ exports = module.exports = function(req, res) {
 
 
 	// Load Organisers
-	view.on('init', function(next) {
-		User.model.find()
-		.sort('name.first')
-		.where('isPublic', true)
-		.where('isOrganiser', true)
-		.exec(function(err, organisers) {
-			if (err) res.err(err);
-			locals.organisers = organisers;
-			next();
-		});
-	});
+	// view.on('init', function(next) {
+	// 	User.model.find()
+	// 	.sort('name.first')
+	// 	.where('isPublic', true)
+	// 	.where('isOrganiser', true)
+	// 	.exec(function(err, organisers) {
+	// 		if (err) res.err(err);
+	// 		locals.organisers = organisers;
+	// 		next();
+	// 	});
+	// });
 
 
-	// Load Speakers
+	// // Load Speakers
 
-	view.on('init', function(next) {
-		User.model.find()
-		.sort('-talkCount name.first')
-		.where('isPublic', true)
-		.where('talkCount').gt(0)
-		.exec(function(err, speakers) {
-			if (err) res.err(err);
-			locals.speakers = speakers;
-			next();
-		});
-	});
+	// view.on('init', function(next) {
+	// 	User.model.find()
+	// 	.sort('-talkCount name.first')
+	// 	.where('isPublic', true)
+	// 	.where('talkCount').gt(0)
+	// 	.exec(function(err, speakers) {
+	// 		if (err) res.err(err);
+	// 		locals.speakers = speakers;
+	// 		next();
+	// 	});
+	// });
 
 
 	// Pluck IDs for filtering Community
