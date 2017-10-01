@@ -54,7 +54,6 @@ exports = module.exports = function(req, res) {
 
 	view.on('init', function(next) {
 		User.model.find()
-		.sort('-lastRSVP')
 		.where('isPublic', true)
 		.where('_id').nin(locals.organiserIDs)
 		.where('_id').nin(locals.speakerIDs)

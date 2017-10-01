@@ -4,14 +4,15 @@ include ../../mixins/link
 
 block intro
 	.page-intro: .container
-		h1 Links
+		h1 Glorify Playlist
 		if data.tag
-			p.lead Tutorials, Libraries, Frameworks and blog posts under <strong>#{data.tag.name}</strong>
+			p.lead Worship songs under <strong>#{data.tag.name}</strong>
 		else
-			p.lead Tutorials, Libraries, Frameworks and blog posts mentioned in SydJS talks, or just of general usefulness.
-		//- .buttons
+			p.lead Worship songs mentioned around God's Greenery
+
+		.buttons
 			if !user
-				a(href='/join').btn.btn-primary Join SydJS
+				a(href='/join').btn.btn-primary Join God's Greenery
 				a(href='/signin').btn.btn-default Sign In
 			else
 				a(href='/me/create/link').btn.btn-primary Add link
@@ -32,7 +33,7 @@ block content
 							h3.text-muted No links in the tag #{data.tag.name}.
 						else
 							h3.text-muted There are no links yet.
-			
+
 			.col-sm-3
 				h5.text-muted Sort by
 				p: small

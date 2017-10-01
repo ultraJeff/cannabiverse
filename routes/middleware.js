@@ -8,6 +8,7 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
+var querystring = require('querystring');
 
 
 /**
@@ -18,18 +19,17 @@ var _ = require('lodash');
 	or replace it with your own templates / logic.
 */
 exports.initLocals = function (req, res, next) {
-	res.locals.navLinks = [
-		// { label: 'Research', key: 'research', href: '/blog/research/' },
-		// { label: 'Innovation', key: 'innovation', href: '/blog/innovation/' },
-		// { label: 'News', key: 'news', href: '/blog/news/' },
-		// { label: 'Culture', key: 'culture', href: '/blog/culture/' },
-		// { label: 'Education', key: 'education', href: '/blog/education/' },
+
+	var locals = res.locals;
+
+	locals.navLinks = [
 		{ label: 'Witness Videos', key: 'witness-videos', href: 'http://godsgreenery.com/' },
 		{ label: 'The Word', key: 'the-word', href: 'http://stories.christiansforcbd.com/' },
 		{ label: 'What is CBD?', key: 'about-cbd', href: 'http://godsgreenery.com/blog/2017/08/08/httpchristiansforcbd-comblog20170619what-are-cbds/' },
 		{ label: 'Finder', key: 'finder-map', href: '/map' }
 	];
-	res.locals.cbdTypes = [
+
+	locals.cbdTypes = [
 		{ label: 'CBD for Cancer', key: 'research', href: '#' },
 		{ label: 'CBD for PTSD', key: 'innovation', href: '#' },
 		{ label: 'CBD for Pain', key: 'news', href: '#' },
@@ -37,12 +37,16 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'CBD for Autism', key: 'education', href: '#' },
 	];
 
-	res.locals.user = req.user;
+	locals.user = req.user;
 
-	res.locals.page = {
+	//locals.basedir = keystone.get('basedir');
+
+	locals.page = {
 		title: 'God\'s Greenery',
 		path: req.url.split("?")[0] // strip the query - handy for redirecting back to the page
 	};
+
+	locals.qs_set = qs_set(req, res);
 
 	next();
 };

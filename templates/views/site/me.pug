@@ -5,8 +5,11 @@ block intro
 block content
 	.container-sm
 		.page-intro
-			p.lead Hi #{user.name.first}, these are your settings and
+			p.lead Hi #{user.name.first}, these are your settings and 
 				a(href=user.url) profile details
+			ul
+				li: a(href="/me/create/post") Write a new post
+				li: a(href="/me/create/link") Create a new link
 			//- if nextMeetup
 				.alert.alert-info
 					span.entypo.entypo-calendar
@@ -111,12 +114,12 @@ block content
 				//- .form-group
 				//- 	label.col-sm-2.control-label Website
 				//- 	.col-sm-10: input(type='text', name='website' value=user.website).form-control
-				.form-group
-					label.col-sm-2.control-label Bio
-						br
-						.text-muted (markdown)
-					.col-sm-10
-						textarea(name='bio', rows=5).form-control=user.bio.md
+				//- .form-group
+				//- 	label.col-sm-2.control-label Bio
+				//- 		br
+				//- 		.text-muted (markdown)
+				//- 	.col-sm-10
+				//- 		textarea(name='bio', rows=5).form-control=user.bio.md
 
 				.form-group
 					label.col-sm-2.control-label Photo
