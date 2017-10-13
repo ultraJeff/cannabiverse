@@ -10,22 +10,22 @@ block content
 				ol.carousel-indicators
 					li.active(data-target="#main-carousel", data-slide-to="0")
 					//- Change this to a for loop
-					if carousels.length > 1
+					if carousels[0].images.length > 1
 						li(data-target="#main-carousel", data-slide-to="1")
-					if carousels.length > 2
+					if carousels[0].images.length > 2
 						li(data-target="#main-carousel", data-slide-to="2")
-					if carousels.length > 3
+					if carousels[0].images.length > 3
 						li(data-target="#main-carousel", data-slide-to="3")
-					if carousels.length > 4
+					if carousels[0].images.length > 4
 						li(data-target="#main-carousel", data-slide-to="4")
 				.carousel-inner
 					each image, index in carousels[0].images
-						.carousel-item(class=(index == 0 ? 'active' : null))
+						a.carousel-item(href=(carousels[0].links[index] ? carousels[0].links[index] : '#'), class=(index == 0 ? 'active' : null))
 							img.d-block.w-100(src=image.secure_url, alt=carousels[0].captions[index])
 							.carousel-caption.d-none.d-md-block #{carousels[0].captions[index]}
 
 				//- controls
-				if carousels.length > 1
+				if carousels[0].images.length > 1
 					a.left.carousel-control-prev(href="#main-carousel", role="button", data-slide="prev")
 						span.carousel-control-prev-icon(aria-hidden="true")
 						span.sr-only Previous

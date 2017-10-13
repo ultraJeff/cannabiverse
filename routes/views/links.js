@@ -24,8 +24,6 @@ exports = module.exports = function(req, res) {
 	// Load all categories
 	view.on('init', function(next) {
 
-		console.log(locals.qs_set)
-
 		keystone.list('LinkTag').model.find().sort('name').exec(function(err, results) {
 
 			if (err || !results.length) {
